@@ -1,0 +1,9 @@
+version: 1
+imports: []
+schemas:
+  - id: Box
+    children:
+      - pattern: "*"
+    title: Box
+    desc: 临时收集箱
+    parent: root

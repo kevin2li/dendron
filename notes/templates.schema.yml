@@ -1,0 +1,8 @@
+version: 1
+imports: []
+schemas:
+  - id: template
+    children: []
+    title: templates
+    desc: 模板
+    parent: root

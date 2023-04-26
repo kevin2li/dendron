@@ -1,0 +1,22 @@
+version: 1
+imports: []
+schemas:
+  - id: Tool
+    children:
+      - text_processing
+      - development
+    title: Tool
+    desc: 工具
+    parent: root
+
+  - id: text_processing
+    title: 文本处理
+    desc: 与文本处理相关的工具, 如pandoc等
+
+  - id: development
+    title: 代码管理工具
+    desc: 与开发相关的工具使用, 如docker、git等
+
+  - id: network
+    title: 网络相关工具
+    desc: 与网络相关的工具使用, 如Wireshark、tcpdump等

@@ -1,0 +1,8 @@
+version: 1
+imports: []
+schemas:
+  - id: Algorithm
+    children: []
+    title: Algorithm
+    desc: 算法
+    parent: root

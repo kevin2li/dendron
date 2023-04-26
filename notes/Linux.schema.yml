@@ -1,0 +1,67 @@
+version: 1
+imports: []
+schemas:
+  - id: Linux
+    title: Linux
+    parent: root
+    children:
+      - basic_command
+      - scenario
+
+  - id: scenario
+    title: 应对场景
+    desc: 应对各种场景问题的解决方案记录
+
+  - id: basic_command
+    title: 基础命令
+    desc: 基础命令
+    children:
+      - memory
+      - journal
+      - file
+      - network
+      - user
+      - process
+      - disk
+      - stream
+      - terminal
+      - system
+      - package
+      - device
+
+  - id: memory
+    title: 内存管理
+    desc: 查看内存信息等
+  - id: journal
+    title: 日志管理
+    desc: 查看系统日志、用户登录日志等
+  - id: file
+    title: 文件管理
+    desc: 创建/删除文件(夹)、切换目录、查看文件内容等
+  - id: network
+    title: 网络管理
+    desc: 网络管理相关命令
+  - id: user
+    title: 用户管理
+    desc: 创建用户(组)等
+  - id: process
+    title: 进程管理
+    desc: 查看进程资源占用、杀死进程等
+  - id: disk
+    title: 硬盘管理
+    desc: 挂载硬盘、硬盘分区等
+  - id: stream
+    title: 流处理
+    desc: 文本内容过滤、替换等
+  - id: terminal
+    title: 终端相关
+    desc: 基本操作快捷键等
+  - id: device
+    title: 设备相关
+    desc: 与设备管理相关的命令
+  - id: system
+    title: 系统相关
+    desc: 查看系统相关信息、开关机等
+  - id: package
+    title: 软件包相关
+    desc: 安装、卸载软件包等

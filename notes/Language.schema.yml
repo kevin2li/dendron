@@ -1,0 +1,24 @@
+version: 1
+imports: []
+schemas:
+  - id: Language
+    children:
+      - C++
+      - Go
+      - Python
+      - Javascript
+    title: 编程语言
+    parent: root
+
+  - id: C++
+    title: C++
+    desc: C++基础语法、库使用等
+  - id: Go
+    title: Go
+    desc: Go基础语法、库使用等
+  - id: Python
+    title: Python
+    desc: Python基础语法、库使用等
+  - id: Javascript
+    title: Javascript
+    desc: Javascript基础语法、库使用等
