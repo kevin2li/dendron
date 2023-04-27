@@ -1,6 +1,11 @@
+# %%
 from minio import Minio
 from minio.error import S3Error
 import traceback
+from pathlib import Path
+import os
+from tqdm import tqdm
+# %%
 
 # 设置MinIO服务器信息
 client = Minio(
@@ -10,27 +15,34 @@ client = Minio(
     secure=False
 )
 
-# # 设置图片的本地路径和在MinIO服务器上的存储路径
-# local_file = r"C:\Users\kevin\Downloads\Snipaste_2023-04-27_15-51-41.png"
-# minio_file = "Snipaste_2023-04-27_15-51-41.png"
+def upload_file(local_path, bucket_name: str="image-bed", dir=None):
+    # 设置图片的本地路径和在MinIO服务器上的存储路径
+    p = Path(local_path)
+    minio_file = f"{dir}/{p.name}"
+    try:
+        client.fput_object(bucket_name, minio_file, local_path)
+    except S3Error as e:
+        traceback.print_exc()
 
-# # 上传图片到MinIO服务器
-# try:
-#     client.fput_object( "image-bed", minio_file, local_file )
-#     print(f"{local_file} uploaded as {minio_file}")
-# except S3Error as e:
-#     traceback.print_exc()
+# %%
+# upload_file(r"C:\Users\kevin\Downloads\Snipaste_2023-04-27_18-21-09.png", dir="vanblog/img")
+# %%
+local_dir = r"C:\Users\kevin\images\img"
+imgs = os.listdir(local_dir)
+print(imgs)
+# %%
 
-# List all object paths in bucket that begin with my-prefixname.
-objects = client.list_objects('image-bed', recursive=True)
+objects = client.list_objects('image-bed', prefix="vanblog/img/", recursive=True)
+# print(len(list(objects)))
+objs = []
 for obj in objects:
-    print(obj.bucket_name, obj.object_name.encode('utf-8'), obj.last_modified,
-          obj.etag, obj.size, obj.content_type)
-
-# List all object paths in bucket that begin with my-prefixname using
-# V2 listing API.
-# objects = client.list_objects_v2('image-bed', prefix='',
-#                                  recursive=True)
-# for obj in objects:
-#     print(obj.bucket_name, obj.object_name.encode('utf-8'), obj.last_modified,
-#           obj.etag, obj.size, obj.content_type)
+    obj_name = Path(obj.object_name)
+    objs.append(obj_name.name)
+print(objs)
+# %%
+left = set(imgs).difference(set(objs))
+len(left)
+# %%
+for name in tqdm(left):
+    upload_file(Path(local_dir) / name, dir='vanblog/img')
+# %%
