@@ -2,7 +2,7 @@
 id: lseo2fenqcnu2yvgyxegqfw
 title: socks5代理服务器搭建教程
 desc: ''
-updated: 1682510037517
+updated: 1682588855752
 created: 1682510000115
 ---
 # 简介
@@ -107,12 +107,12 @@ ssh -CD 9999 user@server
 
 以火狐浏览器为例：
 
-![image.png](https://blog.kevin2li.top/static/img/d7cbb2413fd6c2c765d3d7e62a988995.image.png)
+![image.png](https://minio.kevin2li.top/image-bed/vanblog/img/d7cbb2413fd6c2c765d3d7e62a988995.image.png)
 
 3. 测试
 
 
-![image.png](https://blog.kevin2li.top/static/img/22ae082a75faffb08d76cf77d2ed59ff.image.png)
+![image.png](https://minio.kevin2li.top/image-bed/vanblog/img/22ae082a75faffb08d76cf77d2ed59ff.image.png)
 
 可以看到，显示的ip已经为目标服务器的ip了。
 
@@ -130,17 +130,17 @@ Proxifier是一款代理客户端软件，可以让不支持代理服务器工�
 
 2. 添加代理服务器
 
-![image.png](https://blog.kevin2li.top/static/img/4623a6801f2be7a3fb2775dde8299487.image.png)
+![image.png](https://minio.kevin2li.top/image-bed/vanblog/img/4623a6801f2be7a3fb2775dde8299487.image.png)
 
 
-![image.png](https://blog.kevin2li.top/static/img/5fd1890cb2f586965621ed69f2aaddb9.image.png)
+![image.png](https://minio.kevin2li.top/image-bed/vanblog/img/5fd1890cb2f586965621ed69f2aaddb9.image.png)
 
 3. 添加规则
 
-![image.png](https://blog.kevin2li.top/static/img/512e6f4f1aef63b71566f97a66e99e0d.image.png)
+![image.png](https://minio.kevin2li.top/image-bed/vanblog/img/512e6f4f1aef63b71566f97a66e99e0d.image.png)
 
 
-![image.png](https://blog.kevin2li.top/static/img/6aa34cd73e901fadb9e09eb374081d34.image.png)
+![image.png](https://minio.kevin2li.top/image-bed/vanblog/img/6aa34cd73e901fadb9e09eb374081d34.image.png)
 
 4. 测试
 - 查看出口ip
@@ -148,7 +148,7 @@ Proxifier是一款代理客户端软件，可以让不支持代理服务器工�
 curl.exe cip.cc
 ```
 
-![image.png](https://blog.kevin2li.top/static/img/e417faf4d97fefc856ca437e8e41967c.image.png)
+![image.png](https://minio.kevin2li.top/image-bed/vanblog/img/e417faf4d97fefc856ca437e8e41967c.image.png)
 
 可以看到已经在走代理服务器的流量
 
@@ -177,7 +177,7 @@ sudo apt install proxychains
 
 代理配置格式：
 
-![image.png](https://blog.kevin2li.top/static/img/5a737a40f64e072b85d0e818a923d2fb.image.png)
+![image.png](https://minio.kevin2li.top/image-bed/vanblog/img/5a737a40f64e072b85d0e818a923d2fb.image.png)
 
 在配置文件中找到`ProxyList`并添加代理：
 ```ini
@@ -190,7 +190,7 @@ socks5 	127.0.0.1 10080 <your_user> <your_password>
 :::warning{title="注意"}
 在配置文件中要取消`proxy_dns`选项：
 
-![image.png](https://blog.kevin2li.top/static/img/3aa265cdda489d970e8f11907ca4ecf9.image.png)
+![image.png](https://minio.kevin2li.top/image-bed/vanblog/img/3aa265cdda489d970e8f11907ca4ecf9.image.png)
 
 :::
 
@@ -218,5 +218,5 @@ socks5 192.168.2.121 7890
 proxychains curl https://www.google.com
 ```
 
-![image.png](https://blog.kevin2li.top/static/img/79d19a9dbcf66cdf83a69bd5358cfcdf.image.png)
+![image.png](https://minio.kevin2li.top/image-bed/vanblog/img/79d19a9dbcf66cdf83a69bd5358cfcdf.image.png)
 :::

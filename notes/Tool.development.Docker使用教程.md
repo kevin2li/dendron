@@ -2,7 +2,7 @@
 id: d3nsroitu470xsm3zf8jayc
 title: Docker使用教程
 desc: ''
-updated: 1682509775271
+updated: 1682588855784
 created: 1682509746537
 ---
 
@@ -12,7 +12,7 @@ Docker是一个开源的应用容器引擎，基于 Go 语言 并遵从 Apache2.
 Docker的核心是Docker引擎，它是一个轻量级的容器化技术，可以在Linux、Windows和Mac上运行。Docker引擎可以将应用程序及其依赖项打包到一个可移植的容器中，从而实现快速部署、可移植性和可伸缩性。Docker引擎还提供了一组API，可以用于管理和监视容器。
 
 **Docker镜像生命周期：**
-![640.jpg](https://blog.kevin2li.top/static/img/55f78e2df8a5e9d5f1044eab3792e4ef.640.jpg)
+![640.jpg](https://minio.kevin2li.top/image-bed/vanblog/img/55f78e2df8a5e9d5f1044eab3792e4ef.640.jpg)
 
 
 官网：https://www.docker.com/  

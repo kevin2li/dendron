@@ -3,7 +3,19 @@ imports: []
 schemas:
   - id: Box
     children:
-      - pattern: "*"
+      # - pattern: "*"
+      - snippets
+    namespace: true
     title: Box
     desc: 临时收集箱
     parent: root
+
+  - id: snippets
+    namespace: true
+    children:
+      - python
+      - markdown
+  - id: python
+    namespace: true
+  - id: markdown
+    namespace: true

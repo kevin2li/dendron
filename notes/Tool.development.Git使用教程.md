@@ -2,7 +2,7 @@
 id: wc3jyj5e6t4zp0kg2bg2tal
 title: Git使用教程
 desc: ''
-updated: 1682509814067
+updated: 1682588855767
 created: 1682509781052
 ---
 
@@ -10,7 +10,7 @@ created: 1682509781052
 Git是一个开源的分布式版本控制系统，可以有效、高速地处理从很小到非常大的项目版本管理。它是Linus Torvalds为了帮助管理Linux内核开发而开发的一个开放源码的版本控制软件。Git的作用就是对文件进行版本管理，方便在不同版本进行切换修改，类似文件分不同时间备份让后需要时找回其中一份代替，不过更方便使用。
 
 Git文件流：
-![image.png](https://blog.kevin2li.top/static/img/5ca15d0a60362cb3f0ad630d0615d394.image.png)
+![image.png](https://minio.kevin2li.top/image-bed/vanblog/img/5ca15d0a60362cb3f0ad630d0615d394.image.png)
 
 
 <!-- more -->
@@ -96,7 +96,7 @@ git revert <ID>
 ```
 
 :::info{title="git reset回退的三种模式区别"}
-![image.png](https://blog.kevin2li.top/static/img/a4c1e10cc0f0ecc5fbdb1e8d69136988.image.png)
+![image.png](https://minio.kevin2li.top/image-bed/vanblog/img/a4c1e10cc0f0ecc5fbdb1e8d69136988.image.png)
 
 `git reset` 有三种模式，分别是 `--soft`、`--mixed` 和 `--hard`。它们之间的区别如下：  
 `--soft`：此模式只重置 HEAD 到所选提交。它基本上与 git checkout 相同，但不会创建分离的 HEAD 状态。  

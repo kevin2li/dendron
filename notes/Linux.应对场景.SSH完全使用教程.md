@@ -3,7 +3,7 @@
 id: znr93qj63atdv9d3ywquziu
 title: SSH完全使用教程
 desc: ''
-updated: 1682562443380
+updated: 1682588855799
 created: 1682483879682
 tag: 
   - ssh
@@ -24,7 +24,7 @@ SSH（安全外壳协议）是一种加密的网络传输协议，可在不安�
 
 1. 打开“设置”，选择“应用”>“应用和功能”，然后选择“可选功能” 。
 
-![image.png](https://blog.kevin2li.top/static/img/8913cd5522dc757fdd0cdcfae266e9b4.image.png)
+![image.png](https://minio.kevin2li.top/image-bed/vanblog/img/8913cd5522dc757fdd0cdcfae266e9b4.image.png)
 2. 扫描列表，查看是否已安装 OpenSSH。 如果未安装，请在页面顶部选择“添加功能”，然后：
 
 - 查找“OpenSSH 客户端”，再单击“安装”  
@@ -55,7 +55,7 @@ sudo apt install openssh-server
 
 # 常用命令
 ## 基本参数介绍
-![image.png](https://blog.kevin2li.top/static/img/7721142d6d5b6bcb8406b1ff14970189.image.png)
+![image.png](https://minio.kevin2li.top/image-bed/vanblog/img/7721142d6d5b6bcb8406b1ff14970189.image.png)
 :::info{title="常用参数"}
 
 - `-C`: 数据压缩 
@@ -284,7 +284,7 @@ ssh –D 5534 pnap@ssh.server.com
 :::tip{title="使用场景举例"}
 可以将其作为代理使用，如图，主机A通过主机B代理上外网：  
 
-![未命名绘图-第 14 页.drawio.png](https://blog.kevin2li.top/static/img/273658d0ed35bf517dd0d87c6caf58b7.%C3%A6%C2%9C%C2%AA%C3%A5%C2%91%C2%BD%C3%A5%C2%90%C2%8D%C3%A7%C2%BB%C2%98%C3%A5%C2%9B%C2%BE-%C3%A7%C2%AC%C2%AC%2014%20%C3%A9%C2%A1%C2%B5.drawio.png)
+![未命名绘图-第 14 页.drawio.png](https://minio.kevin2li.top/image-bed/vanblog/img/273658d0ed35bf517dd0d87c6caf58b7.%C3%A6%C2%9C%C2%AA%C3%A5%C2%91%C2%BD%C3%A5%C2%90%C2%8D%C3%A7%C2%BB%C2%98%C3%A5%C2%9B%C2%BE-%C3%A7%C2%AC%C2%AC%2014%20%C3%A9%C2%A1%C2%B5.drawio.png)
 ```bash
 # hostA执行
 ssh -D 9999 userB@hostB
@@ -387,7 +387,7 @@ ssh -o ProxyCommand="ssh -W %h:%p kevin2li@192.168.2.121" -p 24 likai@10.14.132.
 
 场景：
 
-![image.png](https://blog.kevin2li.top/static/img/bb0c4301d1af94203123536352b3f817.image.png)
+![image.png](https://minio.kevin2li.top/image-bed/vanblog/img/bb0c4301d1af94203123536352b3f817.image.png)
 
 在配置文件`~/.ssh/config`中可按如下配置：
 
@@ -536,7 +536,7 @@ sudo systemctl restart sshd
 
 通过密码登录被拒绝，则为成功。
 
-![image.png](https://blog.kevin2li.top/static/img/505f1dd7fed0f2140c490791c5aefafe.image.png)
+![image.png](https://minio.kevin2li.top/image-bed/vanblog/img/505f1dd7fed0f2140c490791c5aefafe.image.png)
 
 ## 3. 使用第三方的拦截软件
 

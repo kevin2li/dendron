@@ -2,12 +2,12 @@
 id: 7twx9ycf6a3z5nkpj9k3wt7
 title: VSCode使用教程
 desc: ''
-updated: 1682514168015
+updated: 1682588855730
 created: 1682510699184
 ---
 
 ## Cheetsheet
-![](https://blog.kevin2li.top/static/img/6222e6c763413175ed72a5d43b158aff.2022-09-13-22-21-14.png)
+![](https://minio.kevin2li.top/image-bed/vanblog/img/6222e6c763413175ed72a5d43b158aff.2022-09-13-22-21-14.png)
 
 <!-- more -->
 
@@ -17,13 +17,13 @@ created: 1682510699184
 ### 查看、修改、新建、删除快捷键
 1. 方法一  
 可以通过快捷键`Ctrl+K Ctrl+S`打开快捷键面板，在其中可以查看、修改、新建和删除快捷键
-![image.png](https://blog.kevin2li.top/static/img/70441e60710328da639205b3a400a875.image.png)
+![image.png](https://minio.kevin2li.top/image-bed/vanblog/img/70441e60710328da639205b3a400a875.image.png)
 
 2. 方法二  
 
 `Ctrl+Shift+P`找到想要的功能，然后点击该条最右侧的齿轮图标，可以直接跳转到快捷键分配界面
 
-![image.png](https://blog.kevin2li.top/static/img/f49e26fd591331f0962810c874e2805c.image.png)
+![image.png](https://minio.kevin2li.top/image-bed/vanblog/img/f49e26fd591331f0962810c874e2805c.image.png)
 
 ### 光标操作
 #### 光标移动
@@ -50,11 +50,11 @@ created: 1682510699184
 | `Ctrl+K {` | 选中`{}`之间的内容，然后使用左右方向键移到`{}`前或后 |
 
 ##### 当前文件跳转
-| 快捷键         | 功能                                                                                                                                                      |
-| -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `Ctrl+G`       | 快速跳转到指定行                                                                                                                                          |
-| `Ctrl+Shift+O` | 跳转到选中变量的首次定义位置。使用`@:`还可以将变量按类型分组![image.png](https://blog.kevin2li.top/static/img/12ce447858bd81b0104d7e4f8063c764.image.png) |
-| `Ctrl+U`       | 跳转到上次光标所在位置                                                                                                                                    |
+| 快捷键         | 功能                                                                                                                                                                  |
+| -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Ctrl+G`       | 快速跳转到指定行                                                                                                                                                      |
+| `Ctrl+Shift+O` | 跳转到选中变量的首次定义位置。使用`@:`还可以将变量按类型分组![image.png](https://minio.kevin2li.top/image-bed/vanblog/img/12ce447858bd81b0104d7e4f8063c764.image.png) |
+| `Ctrl+U`       | 跳转到上次光标所在位置                                                                                                                                                |
 
 下面功能的依赖插件`Bookmarks`：
 - `Ctrl+Alt+L`：跳转到下一个bookmark位置
@@ -62,12 +62,12 @@ created: 1682510699184
 
 
 ##### 跨文件跳转
-| 快捷键      | 功能                                                                                                                               |
-| ----------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| `Alt+Right` | 切换回打开过的前一个文件                                                                                                           |
-| `Alt+Left`  | 切换到打开过的后一个文件                                                                                                           |
-| `Alt+Click` | 按住`Alt`，鼠标选中某个函数即可跳转                                                                                                |
-| `Ctrl+T`    | 在工作区内查找指定对象定义位置并跳转 ![image.png](https://blog.kevin2li.top/static/img/517890c7c8806dc2713b3754added173.image.png) |
+| 快捷键      | 功能                                                                                                                                           |
+| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Alt+Right` | 切换回打开过的前一个文件                                                                                                                       |
+| `Alt+Left`  | 切换到打开过的后一个文件                                                                                                                       |
+| `Alt+Click` | 按住`Alt`，鼠标选中某个函数即可跳转                                                                                                            |
+| `Ctrl+T`    | 在工作区内查找指定对象定义位置并跳转 ![image.png](https://minio.kevin2li.top/image-bed/vanblog/img/517890c7c8806dc2713b3754added173.image.png) |
 
 #### 多光标
 | 快捷键          | 功能                              |
@@ -288,13 +288,13 @@ created: 1682510699184
 ### 快速删除空行
 `Ctrl+H`在替换窗口勾选正则表达式按钮，在第一个文本框输入`^\s*(?=\r?$)\n`,选择全部替换即可。
 
-![image.png](https://blog.kevin2li.top/static/img/d57619681e2bdf744cc0649f132fef14.image.png)
+![image.png](https://minio.kevin2li.top/image-bed/vanblog/img/d57619681e2bdf744cc0649f132fef14.image.png)
 
 ### 自定义snippets
 > 参考：https://code.visualstudio.com/docs/editor/userdefinedsnippets#_assign-keybindings-to-snippets
 
 1. 打开snippets配置
-![image.png](https://blog.kevin2li.top/static/img/ce8137e4fbc1efa3888bee9dff8634ca.image.png)
+![image.png](https://minio.kevin2li.top/image-bed/vanblog/img/ce8137e4fbc1efa3888bee9dff8634ca.image.png)
 
 选择要设置snippet的语言，然后添加snippet
 
@@ -311,7 +311,7 @@ created: 1682510699184
 ```
 2. 为snippet设置快捷键
 
-![image.png](https://blog.kevin2li.top/static/img/23bbd953e8d5d8ebf7a00d11295410ec.image.png)
+![image.png](https://minio.kevin2li.top/image-bed/vanblog/img/23bbd953e8d5d8ebf7a00d11295410ec.image.png)
 
 
 添加条目，示例如下：
