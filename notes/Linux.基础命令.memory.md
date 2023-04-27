@@ -1,8 +1,8 @@
 ---
 id: 9qoaa3rv6qriu79lo5iik7w
-title: memory
+title: 内存管理
 desc: ''
-updated: 1682502535716
+updated: 1682562406338
 created: 1682484178161
 ---
 

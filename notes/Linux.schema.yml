@@ -5,14 +5,14 @@ schemas:
     title: Linux
     parent: root
     children:
-      - basic_command
-      - scenario
+      - 基础命令
+      - 应对场景
 
-  - id: scenario
+  - id: 应对场景
     title: 应对场景
     desc: 应对各种场景问题的解决方案记录
 
-  - id: basic_command
+  - id: 基础命令
     title: 基础命令
     desc: 基础命令
     children:

@@ -1,8 +1,8 @@
 ---
 id: 9d3keo1gmaf5titr8qnh2gx
-title: journal
+title: 日志管理
 desc: ''
-updated: 1682484254194
+updated: 1682562393853
 created: 1682484254194
 ---
 

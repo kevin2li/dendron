@@ -1,8 +1,9 @@
 ---
+
 id: 3c907m30podo1wr4ul0kz53
-title: terminal
+title: 终端管理
 desc: ''
-updated: 1682484227345
+updated: 1682562443342
 created: 1682484227345
 ---
 

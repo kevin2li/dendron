@@ -1,9 +1,12 @@
 ---
+
 id: znr93qj63atdv9d3ywquziu
 title: SSH完全使用教程
 desc: ''
-updated: 1682506377660
+updated: 1682562443380
 created: 1682483879682
+tag: 
+  - ssh
 ---
 
 # 简介

@@ -1,8 +1,8 @@
 ---
 id: 43ze2mii87k0x1t6hd5fgnk
-title: device
+title: 设备管理
 desc: ''
-updated: 1682503782433
+updated: 1682562373678
 created: 1682484274765
 ---
 
