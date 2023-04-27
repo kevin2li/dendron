@@ -3,7 +3,7 @@
 id: 3hkev9qfedy3hp4194vs6qg
 title: 网络管理
 desc: ''
-updated: 1682562443240
+updated: 1682589185921
 created: 1682484195294
 ---
 
@@ -373,4 +373,4 @@ sudo iftop -n
 ```
 输出：
 
-![image.png](https://kevin2li.top/static/img/c3347f697509e1a47e9cb8159b831999.image.png)
+![image.png](https://minio.kevin2li.top/image-bed/vanblog/img/c3347f697509e1a47e9cb8159b831999.image.png)
