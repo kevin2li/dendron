@@ -1,95 +1,104 @@
 ---
+created: 1682589303432
 id: iesx24y5ihccbxpwlrnsvhc
 title: Python处理pdf文件
-desc: ''
-updated: 1682589313529
-created: 1682589303432
+updated: 1682603484637
 ---
 
-# 简介
+## 简介
 
-Python中可以处理pdf的库有好几个，如PyMuPDF、PDFrw、PikePDF、PyPDF2等，本文主要介绍如PyMuPDF的用法。该库相比于同类其他库，支持格式丰富，包括PDF、XPS、EPUB、MOBI FB2、CBZ、SVG、Image等多种格式，且各方面(拷贝页面、提取文字等)处理速度具有明显优势。
+Python中可以处理pdf的库有好几个，如PyMuPDF、PDFrw、PikePDF、PyPDF2等，本文主要介绍如PyMuPDF的用法。该库相比于同类其他库，支持格式丰富，包括PDF、XPS、EPUB、MOBI
+FB2、CBZ、SVG、Image等多种格式，且各方面(拷贝页面、提取文字等)处理速度具有明显优势。
 
 ![image.png](https://minio.kevin2li.top/image-bed/vanblog/img/de14629964ebd5609a672af2adf9de49.image.png)
 
-GitHub: https://github.com/pymupdf/PyMuPDF  
-PyPi: https://pypi.org/project/PyMuPDF/   
+GitHub: https://github.com/pymupdf/PyMuPDF\
+PyPi: https://pypi.org/project/PyMuPDF/\
 文档：https://pymupdf.readthedocs.io/en/latest/index.html
 
 <!-- more -->
 
-# 教程
-## 安装
+## 教程
 
-```python
+### 安装
+
+``` python
 python -m pip install --upgrade pip
 python -m pip install --upgrade pymupdf
 ```
 
-## 开始使用
-### 读取文件
-- 读取普通文件
-```python
+### 开始使用
+
+#### 读取文件
+
+-   读取普通文件
+
+``` python
 input_path = "/home/kevin2li/计算机操作系统(第4版)_汤子丹.pdf"
 doc: fitz.Document = fitz.open(input_path)
 ```
 
-- 读取加密文件
+-   读取加密文件
 
-```pythpn
+``` pythpn
 doc.isEncrypted # True
 doc: fitz.Document = fitz.open(input_path)
 doc.authenticate("password")
 doc.isEncrypted # False
 ```
 
-:::info{title="如何加密PDF"}
+::: info 如何加密PDF
 可以使用WPS:
 
 ![image.png](https://minio.kevin2li.top/image-bed/vanblog/img/521572d1e04332ea27d2644834d57aa3.image.png)
 
 ![image.png](https://minio.kevin2li.top/image-bed/vanblog/img/9faeb55f4d0708f9663ca7a84a8e1cca.image.png)
 :::
-- 取消密码
 
-```pythpn
+-   取消密码
+
+``` pythpn
 doc: fitz.Document = fitz.open(input_path)
 doc.authenticate("password")
 n = doc.page_count
 doc.select(range(n))
 doc.save("out.pdf")
 ```
+
 这样新保存的`out.pdf`就没有密码了。
 
-- 查看总页数
+-   查看总页数
 
-```python
+``` python
 doc.page_count # 418
 ```
-- 查看元信息
 
-```python
+-   查看元信息
+
+``` python
 doc.metadata
 ```
+
 ![image.png](https://minio.kevin2li.top/image-bed/vanblog/img/92b4e47063f4fa9871c47c143e1f5560.image.png)
 
-- 查看目录
+-   查看目录
 
-
-```python
+``` python
 doc.get_toc() # []
 ```
 
-- 读取指定页面
-```python
+-   读取指定页面
+
+``` python
 page = doc.load_page(1) # loads page number 'pno' of the document (0-based)
 
 # 当前页码
 page.number
 ```
-- 遍历页面
 
-```python
+-   遍历页面
+
+``` python
 for page in doc:
     # do something with 'page'
 
@@ -102,14 +111,15 @@ for page in doc.pages(start, stop, step):
     # do something with 'page'
 ```
 
-### 写入文件
-```python
+#### 写入文件
+
+``` python
 doc.save("out.pdf")
 ```
 
-### 删除页面
+#### 删除页面
 
-```python
+``` python
 # 删除单页
 doc.delete_page(3)
 
@@ -118,38 +128,44 @@ doc.delete_pages(1, 3)
 doc.delete_pages(from_page=1, to_page=3)
 doc.delete_pages([1,3,5,9])
 ```
+
 示例：
-```python
+
+``` python
 input_path = "aaa.pdf"
 doc: fitz.Document = fitz.open(input_path)
 doc.delete_page(0)
 doc.save("out3.pdf")
 ```
-### 截取页面
-```python
+
+#### 截取页面
+
+``` python
 input_path = "aaa.pdf"
 doc: fitz.Document = fitz.open(input_path)
 doc.select(range(2, 10))
 doc.save("out.pdf")
 ```
-### 插入页面
 
-```python
+#### 插入页面
+
+``` python
 doc.insert_page(pno, text=None, fontsize=11, width=595, height=842, fontname='helv', fontfile=None, color=None)
 ```
 
-```python
+``` python
 page = doc.new_page(to = -1,  # insertion point: end of document
                     width = 595,  # page dimension: A4 portrait
                     height = 842)
 ```
 
-```python
+``` python
 doc.insert_pdf(docsrc, from_page=-1, to_page=-1, start_at=-1, rotate=-1, links=1, annots=1, show_progress=0, final=1, _gmap=None)
 ```
 
-### 旋转页面
-```python
+#### 旋转页面
+
+``` python
 # Open the PDF document
 doc = fitz.open("document.pdf")
 
@@ -161,8 +177,10 @@ for page in doc:
 # Save the changes to the PDF
 doc.save("rotated_document.pdf")
 ```
-### 调整页面顺序
-```python
+
+#### 调整页面顺序
+
+``` python
 input_path = "out.pdf"
 
 doc: fitz.Document = fitz.open(input_path)
@@ -174,14 +192,15 @@ doc.select(new_seq)
 doc.save("out.pdf")
 ```
 
-### 添加目录
+#### 添加目录
+
 书籍页码可以去网上书店查看复制，保存到txt文件中。
 
 页码文件格式如下：
 
 ![image.png](https://minio.kevin2li.top/image-bed/vanblog/img/10a971312aeb6dd55681414f8826429d.image.png)
 
-```python
+``` python
 import fitz
 import re
 
@@ -207,17 +226,16 @@ doc.set_toc(toc)
 doc.save("out.pdf")
 ```
 
-### PDF转图片
+#### PDF转图片
 
-```python
+``` python
 pix = page.get_pixmap()
 pix.save(f"page-{page.number}.png")
-
 ```
 
-### 合并文件
+#### 合并文件
 
-```python
+``` python
 import fitz
 
 
@@ -233,5 +251,8 @@ doc1.insert_pdf(doc2)
 # Save the merged PDF
 doc1.save('merged.pdf')
 ```
-# 参考
-1. [Medium-Handling PDF files in Python using PyMuPDF](https://gggauravgandhi.medium.com/handling-pdf-files-in-python-using-pymupdf-ba0b0b12ddc4#:~:text=To%20rotate%20pages%20in%20a%20PDF%20document%20using,get%20the%20rotation%20value%20of%20the%20current%20page.)
+
+## 参考
+
+1.  [Medium-Handling PDF files in Python using
+    PyMuPDF](https://gggauravgandhi.medium.com/handling-pdf-files-in-python-using-pymupdf-ba0b0b12ddc4#:~:text=To%20rotate%20pages%20in%20a%20PDF%20document%20using,get%20the%20rotation%20value%20of%20the%20current%20page.)
