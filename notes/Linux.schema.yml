@@ -28,6 +28,7 @@ schemas:
       - system
       - package
       - device
+      - test
 
   - id: memory
     title: 内存管理
@@ -65,3 +66,7 @@ schemas:
   - id: package
     title: 软件包相关
     desc: 安装、卸载软件包等
+  - id: test
+    title: 测试
+    desc: 测试用
+    template: template.blog

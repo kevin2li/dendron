@@ -38,6 +38,7 @@ def insert_metadata(src_path: str, dst_path:str, type="file"):
             # 目录页
             if type!="file":
                 content.append("<AutoCatalog />")
+                return
             with open(dst_path, "w", encoding="utf-8") as f:
                 f.writelines([pattern, new_frontmatter, pattern, *content])
         except:

@@ -2,20 +2,33 @@ version: 1
 imports: []
 schemas:
   - id: Box
-    children:
-      # - pattern: "*"
-      - snippets
-    namespace: true
+    # namespace: true
     title: Box
     desc: 临时收集箱
     parent: root
-
-  - id: snippets
-    namespace: true
     children:
-      - python
-      - markdown
-  - id: python
-    namespace: true
-  - id: markdown
-    namespace: true
+      - pattern: "snippets"
+        desc: 代码片段
+        namespace: true
+        children:
+          - pattern: "python"
+            desc: 代码片段
+            namespace: true
+
+          - pattern: "markdown"
+            desc: 代码片段
+            namespace: true
+
+          - pattern: "go"
+            desc: go
+            namespace: true
+      
+      - pattern: "备忘"
+        desc: 记录重要信息
+      
+      - pattern: "草稿"
+        desc: 博客草稿
+        children:
+          - pattern: "*"
+            template: template.blog
+

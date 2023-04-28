@@ -16,7 +16,11 @@
     "editor.suggest.snippetsPreventQuickSuggestions": false,
     "editor.suggest.showSnippets": true,
     "editor.tabCompletion": "on",
-    "dendron.enableSelfContainedVaultWorkspace": true
+    "dendron.enableSelfContainedVaultWorkspace": true,
+    "window.autoDetectColorScheme": false,
+    "workbench.colorTheme": "Default Dark+ Experimental",
+    "workbench.colorCustomizations": {},
+    "editor.fontSize": 18
   },
   "extensions": {
     "recommendations": [
