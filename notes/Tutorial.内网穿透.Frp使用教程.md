@@ -2,7 +2,7 @@
 created: 1682588941952
 id: o5xni9igaidw328urporkl3
 title: Frp使用教程
-updated: 1682603895909
+updated: 1682605460315
 ---
 
 ## 简介
@@ -15,9 +15,7 @@ Frp是一个高性能的内网穿透反向代理应用，可以将内网服务�
 
 ![](https://minio.kevin2li.top/image-bed/vanblog/img/530fc52d6aed332e6c281b8cdc6f9187.20221019102104.png)
 
-```{=html}
 <!-- more -->
-```
 ## 安装
 
 项目地址：https://github.com/fatedier/frp 1.

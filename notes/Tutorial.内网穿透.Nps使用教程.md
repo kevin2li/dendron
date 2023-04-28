@@ -2,7 +2,7 @@
 created: 1682588993165
 id: way4p1js0ij2ugljhjbk14w
 title: Nps使用教程
-updated: 1682603819952
+updated: 1682605472025
 ---
 
 ## 简介
@@ -16,9 +16,7 @@ updated: 1682603819952
 文档：https://ehang-io.github.io/nps/#/?id=nps\
 Github: https://github.com/ehang-io/nps
 
-```{=html}
 <!-- more -->
-```
 ## 安装
 
 nps支持多种安装方式，包括源码安装、二进制安装、docker安装。本教程只介绍docker版的安装方法，其他安装方法可自行查看文档。

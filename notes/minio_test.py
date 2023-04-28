@@ -46,3 +46,4 @@ len(left)
 for name in tqdm(left):
     upload_file(Path(local_dir) / name, dir='vanblog/img')
 # %%
+

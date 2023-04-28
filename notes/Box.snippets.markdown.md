@@ -2,11 +2,11 @@
 id: ko2nhu3xd4ocfdlp4hbcmlh
 title: markdown
 desc: ''
-updated: 1682559538097
+updated: 1682644194047
 created: 1682559517699
 ---
 
-``` json
+``` json {.line-numbers}
 {
   "container": {
     "prefix": "container",
@@ -15,7 +15,11 @@ created: 1682559517699
   },
   "code": {
     "prefix": "code",
-    "body": ["``` ${1|bash,python,javascript,json,yaml,c++,c|}", "$2", "```"],
+    "body": [
+      "``` ${1|bash,python,cpp,javascript,json,yaml,ini|} {.line-numbers}",
+      "$2",
+      "```"
+    ],
     "description": "多行代码块"
   },
   "image": {

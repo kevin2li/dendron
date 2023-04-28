@@ -1,31 +1,38 @@
 ---
+created: 1682509746537
 id: d3nsroitu470xsm3zf8jayc
 title: Docker使用教程
-desc: ''
-updated: 1682588855784
-created: 1682509746537
+updated: 1682606122725
 ---
 
-# 简介
-Docker是一个开源的应用容器引擎，基于 Go 语言 并遵从 Apache2.0 协议开源。Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口（类似 iPhone 的 app）,更重要的是容器性能开销极低。
+## 简介
+
+Docker是一个开源的应用容器引擎，基于 Go 语言 并遵从 Apache2.0
+协议开源。Docker
+可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的
+Linux
+机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口（类似
+iPhone 的 app）,更重要的是容器性能开销极低。
 
 Docker的核心是Docker引擎，它是一个轻量级的容器化技术，可以在Linux、Windows和Mac上运行。Docker引擎可以将应用程序及其依赖项打包到一个可移植的容器中，从而实现快速部署、可移植性和可伸缩性。Docker引擎还提供了一组API，可以用于管理和监视容器。
 
 **Docker镜像生命周期：**
 ![640.jpg](https://minio.kevin2li.top/image-bed/vanblog/img/55f78e2df8a5e9d5f1044eab3792e4ef.640.jpg)
 
-
-官网：https://www.docker.com/  
-engine文档：https://docs.docker.com/engine/   
-Dockerfile文档： https://docs.docker.com/engine/reference/builder/  
-compose-file文档：https://docs.docker.com/compose/compose-file/05-services/  
+官网：https://www.docker.com/\
+engine文档：https://docs.docker.com/engine/\
+Dockerfile文档： https://docs.docker.com/engine/reference/builder/\
+compose-file文档：https://docs.docker.com/compose/compose-file/05-services/
 
 <!-- more -->
 
-# 安装
-- Ubuntu  
-参考：[Install Docker Engine on Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
-```bash
+## 安装
+
+-   Ubuntu\
+    参考：[Install Docker Engine on
+    Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
+
+``` bash
 # 卸载旧版本
 sudo apt-get remove docker docker-engine docker.io containerd runc
 
@@ -47,9 +54,11 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
 
-# 常用命令
-## 镜像管理
-```bash
+## 常用命令
+
+### 镜像管理
+
+``` bash
 # 构建镜像(位于Dockerfile目录下)
 docker build -t my/image .
 
@@ -73,9 +82,11 @@ docker save -o nginx.tar nginx
 
 # 导入镜像
 docker load -i nginx.tar
-````
-## 容器管理
-```bash
+```
+
+### 容器管理
+
+``` bash
 # 启动容器
 docker run -it -d -p 8080:80 --name nginx --rm -v /data:/data -e PASSWORD=123456 --network mynet nginx
 
@@ -123,10 +134,11 @@ docker export -o nginx.tar nginx
 
 # 容器导入
 docker import nginx.tar nginx
-
 ```
-## 网络管理
-```bash
+
+### 网络管理
+
+``` bash
 # 创建网络
 docker network -d bridge mynet
 
@@ -143,8 +155,9 @@ docker network connect mynet nginx
 docker network disconnect mynet nginx
 ```
 
-## 数据卷管理
-```bash
+### 数据卷管理
+
+``` bash
 # 创建数据卷
 docker volume create myvol
 
@@ -158,7 +171,8 @@ docker volume inspect myvol
 docker volume rm myvol
 ```
 
-# 配置
-## 镜像加速
-参考： https://blog.kevin2li.top/post/60
+## 配置
 
+### 镜像加速
+
+参考： https://blog.kevin2li.top/post/60

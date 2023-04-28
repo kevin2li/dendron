@@ -2,12 +2,34 @@
 id: 7twx9ycf6a3z5nkpj9k3wt7
 title: VSCode使用教程
 desc: ''
-updated: 1682588855730
+updated: 1682645556008
 created: 1682510699184
 ---
 
-## Cheetsheet
-![](https://minio.kevin2li.top/image-bed/vanblog/img/6222e6c763413175ed72a5d43b158aff.2022-09-13-22-21-14.png)
+## 简介
+
+
+VS Code（Visual Studio Code）是一款免费、开源的代码编辑器，由微软开发和维护。它支持多种编程语言和框架，并提供了丰富的扩展功能，可以轻松地满足开发者的不同需求。
+
+以下是 VS Code 的一些主要特点：
+
+1. 跨平台：VS Code 可以在 Windows、macOS 和 Linux 上运行。
+
+2. 内置调试器：VS Code 内置了调试器，支持多种语言和框架的调试。
+
+3. 丰富的扩展功能：VS Code 有大量的扩展可供选择，可以满足不同开发者的需求。
+
+4. 集成终端：VS Code 内置了终端，可以在编辑器内进行命令行操作。
+
+5. Git 支持：VS Code 提供了 Git 集成，可以轻松地进行版本控制操作。
+
+6. 快速编辑：VS Code 提供了多种快捷键和编辑工具，可以提高开发效率。
+
+总之，VS Code 是一款功能强大的代码编辑器，可帮助开发者更高效地进行开发工作。
+
+官网：https://code.visualstudio.com/  
+文档：https://code.visualstudio.com/docs 
+扩展市场：https://marketplace.visualstudio.com/VSCode
 
 <!-- more -->
 
@@ -38,7 +60,7 @@ created: 1682510699184
 | `Fn+Right`   | 光标移到行尾     |
 
 
-下面功能的依赖插件`Quick and Simple Text Selection`:
+下面功能的依赖插件[Quick and Simple Text Selection](https://marketplace.visualstudio.com/items?itemName=dbankier.vscode-quick-select):
 
 | 快捷键     | 功能                                                 |
 | ---------- | ---------------------------------------------------- |
@@ -56,7 +78,7 @@ created: 1682510699184
 | `Ctrl+Shift+O` | 跳转到选中变量的首次定义位置。使用`@:`还可以将变量按类型分组![image.png](https://minio.kevin2li.top/image-bed/vanblog/img/12ce447858bd81b0104d7e4f8063c764.image.png) |
 | `Ctrl+U`       | 跳转到上次光标所在位置                                                                                                                                                |
 
-下面功能的依赖插件`Bookmarks`：
+下面功能的依赖插件[Bookmarks](https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks)：
 - `Ctrl+Alt+L`：跳转到下一个bookmark位置
 - `Ctrl+Alt+J`：跳转到上一个bookmark位置
 
@@ -85,10 +107,10 @@ created: 1682510699184
 | `Ctrl+X`         | 删除当前行       |
 
 #### 文本插入
-| 快捷键             | 功能                 |
-| ------------------ | -------------------- |
-| `Ctrl+Enter`       | 在当前行下方插入空行 |
-| `Ctrl+Shift+Enter` | 在当前行上方插入空行 |
+| 快捷键             | 功能                                   |
+| ------------------ | -------------------------------------- |
+| `Ctrl+Enter`       | 在当前行下方插入空行, 不需要光标在行尾 |
+| `Ctrl+Shift+Enter` | 在当前行上方插入空行                   |
 
 #### 文本复制
 | 快捷键           | 功能               |
@@ -108,15 +130,15 @@ created: 1682510699184
 | `Ctrl+J` | 合并下一行 |
 
 #### 文本选择
-| 快捷键            | 功能                                                       |
-| ----------------- | ---------------------------------------------------------- |
-| `Ctrl+D`          | 选中光标所在单词，再次执行会选中下一个与当前单词相同的单词 |
-| `Ctrl+Shift+L`    | 可以选中当前文件中所有当前出现的光标所在单词               |
-| `Ctrl+A`          | 选中所有文本                                               |
-| `Ctrl+L`          | 选中当前行文本                                             |
-| `Shift+Alt+Click` | 鼠标拖选，可以纵向选择文本                                 |
+| 快捷键            | 功能                                                                                                                                                                                             |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `Ctrl+D`          | 选中光标所在单词，再次执行会选中下一个与当前单词相同的单词。<br> `Alt+C`: 切换大小写匹配(默认是忽略大小写) <br> `Alt+W`: 切换全词匹配(默认是忽略全词匹配) <br> `Alt+R`: 切换正则匹配(默认不开启) |
+| `Ctrl+Shift+L`    | 可以选中当前文件中所有当前出现的光标所在单词                                                                                                                                                     |
+| `Ctrl+A`          | 选中所有文本                                                                                                                                                                                     |
+| `Ctrl+L`          | 选中当前行文本                                                                                                                                                                                   |
+| `Shift+Alt+Click` | 鼠标拖选，可以纵向选择文本                                                                                                                                                                       |
 
-下面功能的依赖插件`Quick and Simple Text Selection`：
+下面功能的依赖插件[Quick and Simple Text Selection](https://marketplace.visualstudio.com/items?itemName=dbankier.vscode-quick-select)：
 
 | 快捷键     | 功能               |
 | ---------- | ------------------ |
@@ -128,7 +150,7 @@ created: 1682510699184
 | `Ctrl+K {` | 选中`{}`之间的内容 |
 
 
-下面功能的依赖插件`Bookmarks`：
+下面功能的依赖插件[Bookmarks](https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks)：
 
 | 快捷键        | 功能                                     |
 | ------------- | ---------------------------------------- |
@@ -342,25 +364,26 @@ sudo chown root <path_to_file>
 ```
 
 ## 插件推荐
-| 插件                                      | 功能                                                                 |
-| ----------------------------------------- | -------------------------------------------------------------------- |
-| `Database Client`                         | 连接数据库工具，支持mysql、mongodb等多种数据库                       |
-| `Blockman - Highlight Nested Code Blocks` | 代码块加边框，使代码更加清晰易读                                     |
-| `Bookmarks`                               | 在代码指定位置添加标记，方便在文件不同位置来回跳转                   |
-| `Color Highlight`                         | 将16进制颜色代码高亮显示，方便查看其具体颜色                         |
-| `Git Graph`                               | 将git提交历史可视化展示                                              |
-| `Gitlens`                                 | git仓库管理工具                                                      |
-| `LeetCode`                                | 算法刷题插件                                                         |
-| `Material Icon Theme`                     | 文件(夹)图标美化                                                     |
-| `Project Manager`                         | 将多个工程目录归档到一起，方便切换                                   |
-| `Quick and Simple Text Selection`         | 支持快速选中双引号、单引号、小括号等配对符号内的文本，非常推荐使用！ |
-| `Rainbow CSV`                             | 将csv文件每列设置不同的颜色，方便查看                                |
-| `Tabnine`                                 | 基于AI的代码智能补全插件，非常推荐！                                 |
-| `Todo Tree`                               | 将代码中的todo、fixme的记号高亮显示                                  |
-| `Color Highlight`                         | 代码中16进制颜色高亮                                                 |
-| `Better Align`                            | 代码对齐                                                             |
+| 插件                                                                                                                | 功能                                                                 |
+| ------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `Database Client`                                                                                                   | 连接数据库工具，支持mysql、mongodb等多种数据库                       |
+| `Blockman - Highlight Nested Code Blocks`                                                                           | 代码块加边框，使代码更加清晰易读                                     |
+| [Bookmarks](https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks)                              | 在代码指定位置添加标记，方便在文件不同位置来回跳转                   |
+| `Color Highlight`                                                                                                   | 将16进制颜色代码高亮显示，方便查看其具体颜色                         |
+| `Git Graph`                                                                                                         | 将git提交历史可视化展示                                              |
+| `Gitlens`                                                                                                           | git仓库管理工具                                                      |
+| `LeetCode`                                                                                                          | 算法刷题插件                                                         |
+| `Material Icon Theme`                                                                                               | 文件(夹)图标美化                                                     |
+| `Project Manager`                                                                                                   | 将多个工程目录归档到一起，方便切换                                   |
+| [Quick and Simple Text Selection](https://marketplace.visualstudio.com/items?itemName=dbankier.vscode-quick-select) | 支持快速选中双引号、单引号、小括号等配对符号内的文本，非常推荐使用！ |
+| `Rainbow CSV`                                                                                                       | 将csv文件每列设置不同的颜色，方便查看                                |
+| `Tabnine`                                                                                                           | 基于AI的代码智能补全插件，非常推荐！                                 |
+| `Todo Tree`                                                                                                         | 将代码中的todo、fixme的记号高亮显示                                  |
+| `Color Highlight`                                                                                                   | 代码中16进制颜色高亮                                                 |
+| `Better Align`                                                                                                      | 代码对齐                                                             |
 
 
 
 
-
+## Cheetsheet
+![](https://minio.kevin2li.top/image-bed/vanblog/img/6222e6c763413175ed72a5d43b158aff.2022-09-13-22-21-14.png)
