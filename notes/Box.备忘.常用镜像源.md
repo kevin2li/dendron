@@ -2,18 +2,19 @@
 id: 10egb6fgplgoxmuboxfaz6d
 title: 常用镜像源
 desc: ''
-updated: 1682589562293
+updated: 1682652980790
 created: 1682589480746
 ---
-# Ubuntu
-阿里云镜像：https://developer.aliyun.com/mirror/ubuntu  
+## Ubuntu
+
+阿里云镜像：https://developer.aliyun.com/mirror/ubuntu\
 清华源镜像：https://mirror.tuna.tsinghua.edu.cn/help/ubuntu/
 
 方法：
-- 修改配置文件  
-配置文件路径：`/etc/apt/sources.list`  
+- 修改配置文件\
+配置文件路径：`/etc/apt/sources.list`
 
-```bash
+``` bash 
 # 备份
 sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
 
@@ -22,7 +23,8 @@ sudo tee /etc/apt/sources.list << EOF
 ```
 
 Ubuntu22.04示例：
-```bash
+
+``` bash 
 # 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释
 deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy main restricted universe multiverse
 # deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy main restricted universe multiverse
@@ -44,11 +46,13 @@ deb http://security.ubuntu.com/ubuntu/ jammy-security main restricted universe m
 
 <!-- more -->
 
-# Debian
-清华源：https://mirror.tuna.tsinghua.edu.cn/help/debian/  
+## Debian
+
+清华源：https://mirror.tuna.tsinghua.edu.cn/help/debian/
 
 Debian11示例：
-```yaml
+
+``` yaml 
 # 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释
 deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye main contrib non-free
 # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye main contrib non-free
@@ -66,11 +70,13 @@ deb https://security.debian.org/debian-security bullseye-security main contrib n
 # deb-src https://security.debian.org/debian-security bullseye-security main contrib non-free
 ```
 
-# pip
-阿里云：https://developer.aliyun.com/mirror/pypi?spm=a2c6h.13651102.0.0.59f71b112m674E  
+## pip
+
+阿里云：https://developer.aliyun.com/mirror/pypi?spm=a2c6h.13651102.0.0.59f71b112m674E\
 清华源： https://mirror.tuna.tsinghua.edu.cn/help/pypi/
 - 终端临时使用
-```bash
+
+``` bash 
 # 阿里云
 pip install <package> -i https://mirrors.aliyun.com/pypi/simple/
 
@@ -78,13 +84,13 @@ pip install <package> -i https://mirrors.aliyun.com/pypi/simple/
 pip install <package> -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
-- 写入配置文件  
+-   写入配置文件
 
-配置文件路径：`~/.pip/pip.conf`  
+配置文件路径：`~/.pip/pip.conf`
 
 内容：
 
-```ini
+``` ini 
 [global]
 index-url = https://mirrors.aliyun.com/pypi/simple/
 
@@ -92,12 +98,13 @@ index-url = https://mirrors.aliyun.com/pypi/simple/
 trusted-host=mirrors.aliyun.com
 ```
 
-# conda
-清华源：https://mirror.tuna.tsinghua.edu.cn/help/anaconda/  
-- 写入配置文件  
+## conda
+
+清华源：https://mirror.tuna.tsinghua.edu.cn/help/anaconda/\
+- 写入配置文件\
 配置文件路径：`~/.condarc`
 
-```yaml
+``` yaml 
 channels:
   - defaults
 show_channel_urls: true
@@ -115,7 +122,8 @@ custom_channels:
   simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
 ```
 
-# docker镜像加速站
+## docker镜像加速站
+
 阿里云：https://help.aliyun.com/document_detail/60750.html
 - 写入配置文件
 
@@ -123,24 +131,26 @@ custom_channels:
 
 添加下面条目：
 
-```json
+``` json 
 {
     "registry-mirrors": ["<镜像加速器地址>"]
 }    
 ```
+
 登录[容器镜像服务控制台](https://cr.console.aliyun.com/?spm=a2c4g.60750.0.0.19e66bbcTKDXGa)，在左侧导航栏选择`镜像工具 > 镜像加速器`，在镜像加速器页面获取镜像加速地址。
 
 ![image.png](https://minio.kevin2li.top/image-bed/vanblog/img/e610718cf7b68cbaf6d9eef84efe82af.image.png)
 
 重启服务：
-```bash
+
+``` bash 
 sudo systemctl daemon-reload
 sudo systemctl restart docker
 ```
 
 验证：
 
-```bash
+``` bash 
 docker info
 ```
 
@@ -148,15 +158,18 @@ docker info
 
 能找到刚才自己设的`Registry Mirrors`，说明设置成功。
 
-# npm
+## npm
+
 参考： https://npmmirror.com/
 
-```bash
+``` bash
  npm install -g <package> --registry=https://registry.npmmirror.com
 ```
 
-# Go
+## Go
+
 参考：https://goproxy.cn/
+
 ``` bash
 go env -w GO111MODULE=on
 go env -w GOPROXY=https://goproxy.cn,direct
