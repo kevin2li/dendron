@@ -1,0 +1,10 @@
+version: 1
+imports: []
+schemas:
+  - id: 设计模式
+    title: 设计模式
+    parent: root
+    namespace: true
+    children: 
+      - pattern: "单例模式"
+      - pattern: "工厂模式"

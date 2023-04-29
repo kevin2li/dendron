@@ -2,12 +2,13 @@
 id: 10egb6fgplgoxmuboxfaz6d
 title: 常用镜像源
 desc: ''
-updated: 1682652980790
+updated: 1682738114162
 created: 1682589480746
 ---
 ## Ubuntu
 
-阿里云镜像：https://developer.aliyun.com/mirror/ubuntu\
+阿里云镜像：https://developer.aliyun.com/mirror/ubuntu  
+
 清华源镜像：https://mirror.tuna.tsinghua.edu.cn/help/ubuntu/
 
 方法：

@@ -1,0 +1,17 @@
+version: 1
+imports: []
+schemas:
+  - id: Network
+    title: networks
+    parent: root
+    children: 
+      - pattern: "物理层"
+        namespace: true
+      - pattern: "数据链路层"
+        namespace: true
+      - pattern: "网络层"
+        namespace: true
+      - pattern: "传输层"
+        namespace: true
+      - pattern: "应用层"
+        namespace: true

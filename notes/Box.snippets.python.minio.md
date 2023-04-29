@@ -2,11 +2,11 @@
 id: q7sf2b16rvom2rdaq55dab1
 title: minio
 desc: ''
-updated: 1682593278408
+updated: 1682738252233
 created: 1682582343471
 ---
 
-# 功能
+## 功能
 上传文件到Minio对象存储服务
 
 ``` python

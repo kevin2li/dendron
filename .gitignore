@@ -5,3 +5,11 @@ seeds
 .next
 pods/service-connections
 .vuepress
+!.vuepress/backup
+!.vuepress/push.ps1
+!.vuepress/package.json
+!.vuepress/migrate.py
+!.vuepress/.gitignore
+!.vuepress/.github
+
+dependencies/localhost/private

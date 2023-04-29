@@ -1,0 +1,9 @@
+version: 1
+imports: []
+schemas:
+  - id: Tutorial
+    title: Tutorial
+    parent: root
+    children: 
+      - pattern: "内网穿透"
+      - pattern: "办公"
