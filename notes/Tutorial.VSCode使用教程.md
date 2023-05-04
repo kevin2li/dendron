@@ -2,7 +2,7 @@
 id: 7twx9ycf6a3z5nkpj9k3wt7
 title: VSCode使用教程
 desc: ''
-updated: 1682671146827
+updated: 1682821547297
 created: 1682510699184
 ---
 
@@ -194,6 +194,11 @@ VS Code（Visual Studio Code）是一款免费、开源的代码编辑器，由�
 | -------- | ------------------------------ |
 | `Ctrl+/` | 注释当前行(再次执行会取消注释) |
 
+#### 文本自动换行
+| 快捷键  | 功能             |
+| ------- | ---------------- |
+| `Alt+Z` | 是否触发自动换行 |
+
 #### 文本排序
 | 快捷键         | 功能                                    |
 | -------------- | --------------------------------------- |
@@ -253,18 +258,19 @@ VS Code（Visual Studio Code）是一款免费、开源的代码编辑器，由�
 ### 编辑器操作
 #### 文件(夹)打开与关闭 
 
-| 快捷键           | 功能                         |
-| ---------------- | ---------------------------- |
-| `Ctrl++N`        | 打开新的空白文件             |
-| `Ctrl++O`        | 从列表中选择打开文件         |
-| `Ctrl+K Ctrl++O` | 打开目录                     |
-| `Ctrl++W`        | 关闭当前文件                 |
-| `Ctrl+Shift+T`   | 恢复刚刚关闭的文件           |
-| `Ctrl+Shift+E`   | 在文件Explorer中聚焦当前文件 |
-| `Ctrl+Shift+N`   | 新建一个编辑器窗口           |
-| `Ctrl+K+O`       | 打开指定的文件目录           |
-| `Ctrl+R`         | 打开最近打开的文件目录       |
-| `Alt+F4`         | 关闭当前编辑器窗口           |
+| 快捷键               | 功能                         |
+| -------------------- | ---------------------------- |
+| `Ctrl++N`            | 打开新的空白文件             |
+| `Ctrl++O`            | 从列表中选择打开文件         |
+| `Ctrl+K Ctrl++O`     | 打开目录                     |
+| `Ctrl++W`            | 关闭当前文件                 |
+| `Ctrl+Shift+T`       | 恢复刚刚关闭的文件           |
+| `Ctrl+Shift+E`       | 在文件Explorer中聚焦当前文件 |
+| `Ctrl+Shift+N`       | 新建一个编辑器窗口           |
+| `Ctrl+K+O`           | 打开指定的文件目录           |
+| `Ctrl+R`             | 打开最近打开的文件目录       |
+| `Alt+F4`             | 关闭当前编辑器窗口           |
+| `Ctrl+K Shift+Enter` | 固定当前编辑器窗口           |
 
 #### 编辑器组
 | 快捷键     | 功能             |
@@ -379,21 +385,21 @@ vscode有很多设置项、很多扩展,以及很多UI设置项,此功能允许�
 ## 插件推荐
 | 插件                                                                                                                | 功能                                                                 |
 | ------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| `Database Client`                                                                                                   | 连接数据库工具，支持mysql、mongodb等多种数据库                       |
-| `Blockman - Highlight Nested Code Blocks`                                                                           | 代码块加边框，使代码更加清晰易读                                     |
-| [Bookmarks](https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks)                              | 在代码指定位置添加标记，方便在文件不同位置来回跳转                   |
-| `Color Highlight`                                                                                                   | 将16进制颜色代码高亮显示，方便查看其具体颜色                         |
-| `Git Graph`                                                                                                         | 将git提交历史可视化展示                                              |
-| `Gitlens`                                                                                                           | git仓库管理工具                                                      |
-| `LeetCode`                                                                                                          | 算法刷题插件                                                         |
-| `Material Icon Theme`                                                                                               | 文件(夹)图标美化                                                     |
-| `Project Manager`                                                                                                   | 将多个工程目录归档到一起，方便切换                                   |
+| [Project Manager](https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager)                  | 将多个工程目录归档到一起，方便切换                                   |
 | [Quick and Simple Text Selection](https://marketplace.visualstudio.com/items?itemName=dbankier.vscode-quick-select) | 支持快速选中双引号、单引号、小括号等配对符号内的文本，非常推荐使用！ |
+| [Bookmarks](https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks)                              | 在代码指定位置添加标记，方便在文件不同位置来回跳转                   |
+| [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)                | 文件(夹)图标美化                                                     |
+| [Blockman - Highlight Nested Code Blocks](https://marketplace.visualstudio.com/items?itemName=leodevbro.blockman)   | 代码块加边框，使代码更加清晰易读                                     |
+| [Color Highlight](https://marketplace.visualstudio.com/items?itemName=naumovs.color-highlight)                      | 将16进制颜色代码高亮显示，方便查看其具体颜色                         |
+| [Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)                                 | 将git提交历史可视化展示                                              |
+| [Gitlens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)                                      | git仓库管理工具                                                      |
+| [Peacock](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-peacock)                              | 修改vscode窗口颜色,当同时打开多个不同的vscode窗口时更方便区分        |
+| [Better Align](https://marketplace.visualstudio.com/items?itemName=Chouzz.vscode-better-align)                      | 代码对齐                                                             |
 | `Rainbow CSV`                                                                                                       | 将csv文件每列设置不同的颜色，方便查看                                |
 | `Tabnine`                                                                                                           | 基于AI的代码智能补全插件，非常推荐！                                 |
 | `Todo Tree`                                                                                                         | 将代码中的todo、fixme的记号高亮显示                                  |
-| `Color Highlight`                                                                                                   | 代码中16进制颜色高亮                                                 |
-| `Better Align`                                                                                                      | 代码对齐                                                             |
+| `Database Client`                                                                                                   | 连接数据库工具，支持mysql、mongodb等多种数据库                       |
+| `LeetCode`                                                                                                          | 算法刷题插件                                                         |
 
 
 ## Cheetsheet

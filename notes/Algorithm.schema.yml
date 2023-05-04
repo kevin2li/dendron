@@ -2,7 +2,51 @@ version: 1
 imports: []
 schemas:
   - id: Algorithm
-    children: []
     title: Algorithm
     desc: 算法
     parent: root
+    namespace: true
+    children: 
+      - pattern: 动态规划
+        namespace: true
+        children: 
+          - pattern: "背包dp"
+          - pattern: "树状dp"
+          - pattern: "区间dp"
+          - pattern: "经典dp"
+            namespace: true
+      - pattern: "贪心"
+        namespace: true
+      - pattern: "树"
+        namespace: true
+      - pattern: "图"
+        namespace: true
+        children:
+          - pattern: "最短路径"
+      - pattern: "查找"
+        namespace: true
+        children: []
+      - pattern: "排序"
+        namespace: true
+        children:
+          - pattern: "冒泡排序"
+          - pattern: "选择排序"
+          - pattern: "快速排序"
+          - pattern: "桶排序"
+          - pattern: "堆排序"
+          - pattern: "希尔排序"
+          - pattern: "基数排序"
+          - pattern: "归并排序"
+      - pattern: "哈希"
+      - pattern: "并查集"
+      - pattern: "堆"
+      - pattern: "栈"
+        children:
+          - pattern: "单调栈"
+      - pattern: "链表"
+        namespace: true
+      - pattern: "数组"
+        namespace: true
+        children:
+          - pattern: "双指针"
+
