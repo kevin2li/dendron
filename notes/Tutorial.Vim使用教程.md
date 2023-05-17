@@ -2,7 +2,7 @@
 id: unvhobazy97207p5sknvdz9
 title: Vim使用教程
 desc: ''
-updated: 1683258456075
+updated: 1683707778329
 created: 1682939832694
 ---
 
@@ -49,9 +49,8 @@ Vim具有强大的编辑功能，可以帮助用户快速编辑和处理文本�
 | 删除整个文档           | `:%d`     |
 
 ##### 其他
-1. 保存需要用sudo权限保存的文件
-`:w !sudo tee %`
-
+1. 保存需要用sudo权限保存的文件: `:w !sudo tee %`
+2. 取消搜索高亮: `:nohl`
 ##### 光标移动
 | 功能             | 按键   |
 | ---------------- | ------ |
@@ -128,6 +127,17 @@ Vim具有强大的编辑功能，可以帮助用户快速编辑和处理文本�
 | tags        | `at`或`it`             |
 
 其中, `a`表示`around`，包含定界符； `i`表示`inside`，不包括定界符
+
+术语解释：
+> 来源: `:help word`
+
+| 术语        | 解释                                                                                                                                                                                                                                                                                                                   |
+| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `word`      | A `word` consists of a sequence of letters, digits and underscores, or a sequence of other non-blank characters, separated with white space (spaces, tabs, <EOL>).                                                                                                                                                     |
+| `WORD`      | A `WORD` consists of a sequence of non-blank characters, separated with white space.  An empty line is also considered to be a `WORD`                                                                                                                                                                                  |
+| `sentence`  | A `sentence` is defined as ending at a '.', '!' or '?' followed by either the end of a line, or by a space or tab.  Any number of closing ')', ']', '"' and ''' characters may appear after the '.', '!' or '?' before the spaces, tabs or end of line.  A paragraph and section boundary is also a sentence boundary. |
+| `paragraph` | A `paragraph` begins after each empty line, and also at each of a set of paragraph macros, specified by the pairs of characters in the 'paragraphs' option.                                                                                                                                                            |
+
 
 #### 动作(motion)
 在vim中，motion表示移动光标的操作。具体来说，motion是指通过键盘输入一系列命令来使光标在文本中向前或向后移动的操作，这些命令通常与方向键（如上、下、左、右）无关，而是使用vim的特殊命令，例如单词、行、段落等。
@@ -432,6 +442,8 @@ q
 | `set list`                    | 显示行尾空格等不可打印字符                                 |
 | `set clipboard=unnamed`       | 允许与系统剪贴板交互                                       |
 | `export VISUAL=vim`           | 将 Vim 设置为默认编辑器                                    |
+| `let mapleader = ","`         | 自定义键映射中的前缀键为,                                  |
+| `nnoremap <Leader>x dd`       | 将 `<Leader>x` 映射为某个功能，如`dd`删除当前行            |
 
 #### 插件管理
 插件管理器：[vim-plug]( https://github.com/junegunn/vim-plug )
@@ -490,6 +502,12 @@ call plug#end()
 "   filetype indent off   " Disable file-type-specific indentation
 "   syntax off            " Disable syntax highlighting
 
+" 键位映射
+nmap <Leader>k yyP
+nmap <Leader>j yyp
+nmap <Leader>h ^
+nmap <Leader>h ^
+nmap <Leader>l g_
 ```
 
 命令说明：
@@ -532,9 +550,78 @@ call plug#begin()
 
 Plug 'https://github.com/tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
+Plug 'easymotion/vim-easymotion'
 
 call plug#end()
+
+let mapleader = ","
+
+"""""""""""""""""""""""""""
+" easymotion插件配置
+"""""""""""""""""""""""""""
+" <Leader>f{char} to move to {char}
+map  <Leader>f <Plug>(easymotion-bd-f)
+nmap <Leader>f <Plug>(easymotion-overwin-f)
+
+" s{char}{char} to move to {char}{char}
+nmap s <Plug>(easymotion-overwin-f2)
+
+" Move to line
+map <Leader>L <Plug>(easymotion-bd-jk)
+nmap <Leader>L <Plug>(easymotion-overwin-line)
+
+" Move to word
+map  <Leader>w <Plug>(easymotion-bd-w)
+nmap <Leader>w <Plug>(easymotion-overwin-w)
 ```
+
+
+### 在其他编辑器中使用vim
+#### VSCode
+可以安装[vim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim)插件，来获得类似原生vim的编辑体验。
+
+启用与关闭vim： `Ctrl-Shift-P`: `Vim: Toggle Vim Mode`
+
+自用配置：
+``` json
+"vim.smartRelativeLine": true,
+"vim.camelCaseMotion.enable": true,
+"vim.cursorStylePerMode.normal": "block",
+"vim.cursorStylePerMode.insert": "line",
+"vim.handleKeys": {
+    "<C-a>": false,
+    "<C-b>": false,
+    "<C-c>": false,
+    "<C-d>": false,
+    "<C-e>": false,
+    "<C-f>": false,
+    "<C-g>": false,
+    "<C-h>": false,
+    "<C-i>": false,
+    "<C-j>": false,
+    "<C-k>": false,
+    "<C-l>": false,
+    "<C-m>": false,
+    "<C-n>": false,
+    "<C-o>": false,
+    "<C-p>": false,
+    "<C-q>": false,
+    "<C-r>": false,
+    "<C-s>": false,
+    "<C-t>": false,
+    "<C-u>": false,
+    "<C-v>": false,
+    "<C-w>": false,
+    "<C-x>": false,
+    "<C-y>": false,
+    "<C-z>": false,
+},
+"vim.leader": ",",
+"vim.matchpairs": "(:),{:},[:],<:>",
+"vim.useSystemClipboard": true
+```
+#### JetBrains
+同样可以安装vim插件
 
 ### Cheatsheet
 ![](https://minio.kevin2li.top/image-bed/202305012053709.png)

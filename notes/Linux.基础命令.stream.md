@@ -138,6 +138,9 @@ cut --characters=1 path/to/file
 - `split`
 
 ```bash
+# 将文件按行数拆分成多个部分，并指定后缀和编号格式
+split -l 10 -d --additional-suffix .sh  batch_run.sh part_ 
+
 # Split a file, each split having 10 lines (except the last split):
 split -l 10 path/to/file
 

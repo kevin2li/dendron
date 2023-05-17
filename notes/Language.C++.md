@@ -2,7 +2,7 @@
 id: opbxfa5jie5tzo1s0glei45
 title: C++
 desc: ''
-updated: 1682675888869
+updated: 1683432262812
 created: 1682484483225
 ---
 
@@ -211,8 +211,43 @@ int main()
 ```
 
 ::: tip  缺点
-  
+不利于编译器优化
 :::
+
+#### 3. 公共头文件中使用内联变量
+`constants.h`:
+``` cpp
+#ifndef CONSTANTS_H
+#define CONSTANTS_H
+
+// define your own namespace to hold constants
+namespace constants
+{
+    inline constexpr double pi { 3.14159 }; // note: now inline constexpr
+    inline constexpr double avogadro { 6.0221413e23 };
+    inline constexpr double myGravity { 9.2 }; // m/s^2 -- gravity is light on this planet
+    // ... other related constants
+}
+#endif
+```
+
+`main.cpp`:
+``` cpp 
+#include "constants.h"
+
+#include <iostream>
+
+int main()
+{
+    std::cout << "Enter a radius: ";
+    int radius{};
+    std::cin >> radius;
+
+    std::cout << "The circumference is: " << 2.0 * radius * constants::pi << '\n';
+
+    return 0;
+}
+```
 ## 链接(Linkage)
 An identifier’s **linkage** determines whether other declarations of that name refer to the same object or not.
 ### 无链接(no linkage)
@@ -249,6 +284,8 @@ extern int g_y;                // forward declaration for non-constant global va
 extern const int g_y;          // forward declaration for const global variable
 extern constexpr int g_y;      // not allowed: constexpr variables can't be forward declared
 ```
+
+- 内联变量(inline variable)默认是外部链接的
 - 全局变量容易导致bug
 参考：[why-non-const-global-variables-are-evil](https://www.learncpp.com/cpp-tutorial/why-non-const-global-variables-are-evil/)
 
