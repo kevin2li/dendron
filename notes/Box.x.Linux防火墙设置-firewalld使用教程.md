@@ -2,12 +2,9 @@
 id: am0v3sz31ismr5jtxypv3mh
 title: Linux防火墙设置-firewalld使用教程
 desc: ''
-updated: 1684567214714
+updated: 1684666153100
 created: 1684561046264
 ---
-
-
-
 
 ## 简介
 

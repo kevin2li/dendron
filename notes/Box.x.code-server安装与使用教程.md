@@ -2,7 +2,7 @@
 id: mnutg2mdtl6k29alw3vilx9
 title: code-server安装与使用教程
 desc: ''
-updated: 1684658779197
+updated: 1684659836953
 created: 1684653637261
 ---
 
@@ -86,34 +86,34 @@ nginx默认配置文件路径：`/etc/nginx/nginx.conf`
 
 nginx参考配置如下：
 ```nginx
-	# code-cloud
-	server {
-		server_name code-cloud.kevin2li.top;
-		listen 443 ssl http2;
-		ssl_certificate /etc/nginx/ssl/kevin2li.top/fullchain.cer;
-		ssl_certificate_key /etc/nginx/ssl/kevin2li.top/kevin2li.top.key;
-		ssl_protocols TLSv1 TLSv1.1 TLSv1.2 TLSv1.3;
-		
-		# listen 80 default;
-		listen 80;
-		if ($scheme = http) {
-			return 301 https://$host:443$request_uri;
-		}
+# code-cloud
+server {
+	server_name code-cloud.kevin2li.top;
+	listen 443 ssl http2;
+	ssl_certificate /etc/nginx/ssl/kevin2li.top/fullchain.cer;
+	ssl_certificate_key /etc/nginx/ssl/kevin2li.top/kevin2li.top.key;
+	ssl_protocols TLSv1 TLSv1.1 TLSv1.2 TLSv1.3;
+	
+	# listen 80 default;
+	listen 80;
+	if ($scheme = http) {
+		return 301 https://$host:443$request_uri;
+	}
 
-		location / {
-			proxy_pass http://127.0.0.1:8073;
-			proxy_set_header Host $host;
-			proxy_set_header X-Real-IP $remote_addr;
-			proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-			proxy_set_header X-Forwarded-Host $http_host;
-			proxy_set_header X-Forwarded-Port $server_port;
-			proxy_set_header X-Forwarded-Proto $scheme;
-            proxy_set_header Upgrade $http_upgrade;
-            proxy_set_header Connection upgrade;
-            proxy_set_header Accept-Encoding gzip;
-			proxy_redirect http:// https://;
-		}
-  	}
+	location / {
+		proxy_pass http://127.0.0.1:8073;
+		proxy_set_header Host $host;
+		proxy_set_header X-Real-IP $remote_addr;
+		proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+		proxy_set_header X-Forwarded-Host $http_host;
+		proxy_set_header X-Forwarded-Port $server_port;
+		proxy_set_header X-Forwarded-Proto $scheme;
+		proxy_set_header Upgrade $http_upgrade;
+		proxy_set_header Connection upgrade;
+		proxy_set_header Accept-Encoding gzip;
+		proxy_redirect http:// https://;
+	}
+}
 ```
 修改完后，测试并启用：
 ```bash
@@ -125,5 +125,3 @@ sudo nginx -s reload
 ```
 
 之后就可以通过你自定义的域名访问了。
-
-## 参考
