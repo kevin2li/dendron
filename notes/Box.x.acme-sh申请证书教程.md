@@ -1,8 +1,8 @@
 ---
 id: lxo6k7lxup7j1hrjycu8ok3
-title: sh申请证书教程
+title: acme.sh申请证书教程
 desc: ''
-updated: 1684302122992
+updated: 1684302793893
 created: 1684285703425
 ---
 

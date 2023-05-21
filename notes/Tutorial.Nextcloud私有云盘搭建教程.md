@@ -2,7 +2,7 @@
 id: xdr7xmc83rtay1xto8n8dy0
 title: Nextcloud私有云盘搭建教程
 desc: ''
-updated: 1682589851267
+updated: 1684307948516
 created: 1682589844148
 ---
 #  简介
@@ -120,11 +120,18 @@ array (
 - 申请ssl证书：最好泛域名证书，可通过[acme.sh](https://github.com/acmesh-official/acme.sh)申请
 - 设置反向代理：如可通过`https://nextcloud.xxx.com`反向代理到`http://127.0.0.1:<port>`来访问nextcloud服务，注意设置好ssl证书
 
-:::tip{title="提示"}
+:::tip 提示  
 设置https后，需要在`nextcloud-data/config/config.php`添加如下配置，否则app端可能会登录不了。
 ```php
-'overwriteprotocol' => 'https'
+'overwriteprotocol' => 'https',
+'overwrite.cli.url' => 'https://nc.example.com',
+'overwritehost' => 'nc.example.com',
+'trusted_proxies' => ['10.0.0.1'],
+'overwritecondaddr' => '^10\.0\.0\.1$',
+// 'overwritewebroot' => '',
 ```
+参考：https://docs.nextcloud.com/server/26/admin_manual/configuration_server/reverse_proxy_configuration.html
+
 :::
 
 ## windows挂载目录

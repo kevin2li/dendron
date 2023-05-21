@@ -3,7 +3,7 @@
 id: 3hkev9qfedy3hp4194vs6qg
 title: 网络管理
 desc: ''
-updated: 1682589185921
+updated: 1684561040132
 created: 1682484195294
 ---
 
@@ -159,7 +159,7 @@ netstat --listening --program --numeric --tcp --udp --extend
 ```
 ### 防火墙
 - `firewall-cmd`
-
+> 详见：[[Box.x.Linux防火墙设置-firewalld使用教程]]
 ```bash
 # View the available firewall zones:
 firewall-cmd --get-active-zones
