@@ -119,6 +119,7 @@ Acquire::https::proxy "https://User:Password@host:port/";
 ### docker设置使用代理
 参考：https://docs.docker.com/network/proxy/
 
+- 全局代理(应用到所有容器)
 在`~/.docker/config.json`中加入下面条目：
 ```json
 {
@@ -133,7 +134,11 @@ Acquire::https::proxy "https://User:Password@host:port/";
  }
 }
 ```
-
+- 局部代理(指定容器使用代理)
+```bash
+# 使用宿主机代理(进入容器内部执行)
+export ALL_PROXY=http://host.docker.internal:7890
+```
 ### 代码中设置代理
 - `Python`
 ```python

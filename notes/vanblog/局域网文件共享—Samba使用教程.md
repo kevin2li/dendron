@@ -9,6 +9,7 @@ docker镜像： https://hub.docker.com/r/dperson/samba
 <!-- more -->
 
 # 方法
+## 使用Docker安装
 1. 配置docker、docker-compose环境  
 参考：https://blog.kevin2li.top/post/29
 
@@ -147,4 +148,82 @@ include = /etc/samba/%U.smb.conf
 docker compose up -d
 ```
 
-# 参考
+## 裸机安装
+参考：https://ubuntu.com/tutorials/install-and-configure-samba#2-installing-samba
+
+1. 安装
+``` bash 
+sudo apt update
+sudo apt install samba
+```
+
+2. 创建共享目录
+
+```bash
+mkdir /home/samba/public
+```
+
+3. 修改配置文件: `/etc/samba/smb.conf`
+``` ini
+# 定义共享目录及权限
+[public]
+  path = /home/samba/public
+  comment = public directory
+  browsable = yes
+  read only = no
+  writable = yes
+  valid users = user1,user2
+  create mask = 0666 # 创建文件权限
+  directory mask = 0777 # 创建目录权限
+  guest ok = yes
+```
+
+权限说明：
+- `browsable`: 用于定义共享目录是否可浏览。如果设置为Yes，则共享目录可以被浏览，用户可以在网络上看到该共享目录，并访问其中的文件和子目录。如果设置为No，则共享目录不可以被浏览，用户无法看到该共享目录，也无法访问其中的文件和子目录。
+
+- `read only`：指定共享目录是否只读。如果设置为Yes，则用户只能读取共享目录中的文件和目录，不能进行创建、修改和删除操作。如果设置为No，则用户可以进行读写操作。
+
+- `writable`：指定共享目录是否可以被写入。如果设置为Yes，则用户可以进行创建、修改和删除操作。如果设置为No，则用户只能读取共享目录中的文件和目录，不能进行写入操作。
+
+4. 启动服务
+``` bash 
+# 启动服务
+sudo systemctl start smbd
+
+# 查看服务状态
+sudo systemctl status smbd
+```
+
+5. 防火墙放行
+``` bash 
+sudo firewall-cmd --permanent --zone=public --add-service=samba
+sudo firewall-cmd --reload
+```
+6. 添加用户
+
+由于samba不使用系统账户的密码，需要单独为用户指定samba密码。
+
+``` bash 
+# 设置smb密码
+sudo smbpasswd -a username
+
+# 查看samba用户列表
+sudo pdbedit -w -L
+```
+
+7. 连接
+
+- Windows
+
+路径：`\\ip-address\sambashare`  
+
+可以`Win+R`输入，或者在文件资源管理器地址栏输入。
+
+为了访问方便，还可以将其加入网络位置。
+
+![](https://minio.kevin2li.top/image-bed/blog/20230521210408.png)
+
+![](https://minio.kevin2li.top/image-bed/blog/20230521210106.png)
+
+- Linux  
+路径：`smb://ip-address/sambashare`

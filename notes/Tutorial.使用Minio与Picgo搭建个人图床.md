@@ -2,7 +2,7 @@
 created: 1682573131987
 id: bwmouyxtd6gzwl1033tx4fx
 title: 使用Minio与Picgo搭建个人图床
-updated: 1682679858471
+updated: 1684678667853
 ---
 
 ## 简介
@@ -109,6 +109,40 @@ minio.example.com {
 sudo systemctl restart caddy
 ```
 
+或者使用nginx:
+```nginx
+# minio
+server {
+  server_name minio.kevin2li.top;
+  listen 443 ssl http2;
+  ssl_certificate /etc/nginx/ssl/kevin2li.top/fullchain.cer;
+  ssl_certificate_key /etc/nginx/ssl/kevin2li.top/kevin2li.top.key;
+  ssl_protocols TLSv1 TLSv1.1 TLSv1.2 TLSv1.3;
+  
+  # listen 80 default;
+  listen 80;
+  if ($scheme = http) {
+    return 301 https://$host:443$request_uri;
+  }
+
+  location / {
+    proxy_pass http://127.0.0.1:9200;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Host $http_host;
+    proxy_set_header X-Forwarded-Port $server_port;
+    proxy_set_header X-Forwarded-Proto $scheme;
+          proxy_set_header Upgrade $http_upgrade;
+          proxy_set_header Connection upgrade;
+          proxy_set_header Accept-Encoding gzip;
+    proxy_redirect http:// https://;
+  }
+}
+```
+``` bash
+sudo nginx -s reload
+```
 #### 子域名配置
 
 由于上面使用`minio.example.com`作为域名，需要在云服务厂商的域名控制台新建这个子域名，也可以使用[ddns](https://github.com/NewFuture/DDNS)快速配置：

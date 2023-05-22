@@ -2,7 +2,7 @@
 id: unvhobazy97207p5sknvdz9
 title: Vim使用教程
 desc: ''
-updated: 1684302485201
+updated: 1684735103997
 created: 1682939832694
 ---
 
@@ -133,7 +133,7 @@ Vim具有强大的编辑功能，可以帮助用户快速编辑和处理文本�
 
 | 术语        | 解释                                                                                                                                                                                                                                                                                                                   |
 | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `word`      | A `word` consists of a sequence of letters, digits and underscores, or a sequence of other non-blank characters, separated with white space (spaces, tabs, <EOL>).                                                                                                                                                     |
+| `word`      | A `word` consists of a sequence of letters, digits and underscores, or a sequence of other non-blank characters, separated with white space (spaces, tabs, EOL).                                                                                                                                                     |
 | `WORD`      | A `WORD` consists of a sequence of non-blank characters, separated with white space.  An empty line is also considered to be a `WORD`                                                                                                                                                                                  |
 | `sentence`  | A `sentence` is defined as ending at a '.', '!' or '?' followed by either the end of a line, or by a space or tab.  Any number of closing ')', ']', '"' and ''' characters may appear after the '.', '!' or '?' before the spaces, tabs or end of line.  A paragraph and section boundary is also a sentence boundary. |
 | `paragraph` | A `paragraph` begins after each empty line, and also at each of a set of paragraph macros, specified by the pairs of characters in the 'paragraphs' option.                                                                                                                                                            |

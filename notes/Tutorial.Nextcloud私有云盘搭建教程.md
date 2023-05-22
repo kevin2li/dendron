@@ -2,7 +2,7 @@
 id: xdr7xmc83rtay1xto8n8dy0
 title: Nextcloud私有云盘搭建教程
 desc: ''
-updated: 1684307948516
+updated: 1684677107731
 created: 1682589844148
 ---
 #  简介
@@ -161,6 +161,10 @@ windows文件资源管理器中，右击"此电脑"，选择"映射网络驱动�
 ```bash
 docker exec -it nextcloud bash # 进入容器
 #-------BEGIN---------
+
+# 网络代理设置
+export ALL_PROXY="http://host.docker.internal:7890"
+
 apt update
 apt install smbclient libsmbclient-dev
 pecl install smbclient
