@@ -1,8 +1,8 @@
 ---
 id: 10egb6fgplgoxmuboxfaz6d
-title: 常用镜像源
+title: 常用镜像源或代理
 desc: ''
-updated: 1682738114162
+updated: 1684821478574
 created: 1682589480746
 ---
 ## Ubuntu
@@ -123,7 +123,10 @@ custom_channels:
   simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
 ```
 
-## docker镜像加速站
+## docker
+> 参考: [知乎 | Docker网络问题经验谈](https://zhuanlan.zhihu.com/p/393002881?utm_campaign=shareopn&utm_medium=social&utm_oi=790165242284998656&utm_psn=1644127962583830530&utm_source=wechat_session)
+
+### 镜像加速站
 
 阿里云：https://help.aliyun.com/document_detail/60750.html
 - 写入配置文件
@@ -140,7 +143,7 @@ custom_channels:
 
 登录[容器镜像服务控制台](https://cr.console.aliyun.com/?spm=a2c4g.60750.0.0.19e66bbcTKDXGa)，在左侧导航栏选择`镜像工具 > 镜像加速器`，在镜像加速器页面获取镜像加速地址。
 
-![image.png](https://minio.kevin2li.top/image-bed/vanblog/img/e610718cf7b68cbaf6d9eef84efe82af.image.png)
+![](https://minio.kevin2li.top/image-bed/blog/20230523135202.png)
 
 重启服务：
 
@@ -154,10 +157,47 @@ sudo systemctl restart docker
 ``` bash 
 docker info
 ```
-
-![image.png](https://minio.kevin2li.top/image-bed/vanblog/img/24dd7526da3770d004d7b057f3ab8804.image.png)
+![](https://minio.kevin2li.top/image-bed/blog/20230523135234.png)
 
 能找到刚才自己设的`Registry Mirrors`，说明设置成功。
+
+### 编译时使用代理
+遇到一些git/pip操作，仍然无法连接，首先将宿主机配置好代理，编译时：
+``` bash 
+docker build -t image_name . --network host \
+        --build-arg http_proxy=${http_proxy}\
+        --build-arg https_proxy=${https_proxy}
+```
+### 运行时使用代理
+首先将宿主机配置好代理，运行时：
+``` bash 
+docker run -it --network=host \
+        --env http_proxy=${http_proxy}\
+        --env https_proxy=${https_proxy} image_name
+```
+
+### docker-compose使用代理
+
+``` bash 
+version: "3.0"
+services:
+    my_service:
+        image: image_name
+        build:
+            context: ./
+            dockerfile: Dockerfile
+        network_mode: "host" #注意使用此模式不需要端口映射，否则会报错
+        environment:
+            - "http_proxy=127.0.0.1:8999"
+            - "https_proxy=127.0.0.1:8999"
+```
+
+### 容器内使用代理
+首先宿主机配好代理,假设运行在7890端口.
+``` bash 
+# 容器内执行
+export ALL_PROXY="http://host.docker.internal:7890"
+```
 
 ## npm
 

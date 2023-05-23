@@ -2,7 +2,7 @@
 id: s3p0r5dow6tt9ovb39khw82
 title: 备份工具Kopia安装与使用教程
 desc: ''
-updated: 1684819122537
+updated: 1684834444968
 created: 1684818211858
 ---
 
@@ -30,6 +30,10 @@ Github: https://github.com/kopia/kopia
 ### 创建快照
 ![](https://minio.kevin2li.top/image-bed/blog/20230523131325.png)
 
+指定需要备份的目录路径,并配置备份策略
+
+![](https://minio.kevin2li.top/image-bed/blog/20230523132239.png)
+
 ### 配置备份策略
 
 可以在策略(Policy)标签页下进行设置:
@@ -48,3 +52,12 @@ Github: https://github.com/kopia/kopia
 点开其中一个快照历史,可以选择将其挂载到本地或者恢复到指定目录
 
 ![](https://minio.kevin2li.top/image-bed/blog/20230523131725.png)
+
+### 查看备份历史
+在任务标签页下可以查看每次备份的时间、状态等信息.
+
+![](https://minio.kevin2li.top/image-bed/blog/20230523173210.png)
+
+点开一次记录可以查看更详细的记录日志.
+
+![](https://minio.kevin2li.top/image-bed/blog/20230523173245.png)

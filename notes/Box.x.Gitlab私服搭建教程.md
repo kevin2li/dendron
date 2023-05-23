@@ -2,12 +2,30 @@
 id: ttabxboou07jrozovi8b37r
 title: Gitlab私服搭建教程
 desc: ''
-updated: 1684818185284
+updated: 1684825923002
 created: 1684732293880
 ---
 
 ## 简介
-xx
+GitLab是一个基于Web的Git代码仓库管理工具，类似于GitHub，但提供了更完整的应用程序生命周期管理解决方案，包括持续集成/持续交付（CI/CD）、问题跟踪、代码审查、代码片段等功能，可以帮助团队更高效地协作开发和部署应用程序。
+
+GitLab有两个版本：社区版和企业版。社区版是免费的开源软件，可以自行搭建在本地服务器或云端，并提供了很多功能，如代码管理、问题跟踪、持续集成/持续交付（CI/CD）等。而企业版则提供了更多的高级功能，如代码审查、高可用性、容器注册表等，并提供了更多的安全和管理功能。
+
+GitLab的主要特点包括：
+
+代码管理：GitLab提供了一个易于使用的Web界面，可以管理代码仓库、分支、标记等，并提供了与Git兼容的版本控制功能。
+
+持续集成/持续交付（CI/CD）：GitLab集成了CI/CD功能，可以自动构建、测试和部署应用程序，支持多种集成测试和部署环境，如Kubernetes、Docker等，并提供了丰富的插件和API。
+
+问题跟踪：GitLab提供了问题跟踪功能，可以帮助团队跟踪和解决问题，如bug、任务、需求等，并支持多种问题状态、优先级、标签等。
+
+代码审查：GitLab提供了代码审查功能，可以帮助团队进行代码评审和合并请求，并支持多种合并策略、审查标准、评论等。
+
+代码片段：GitLab提供了代码片段功能，可以方便地分享和管理代码片段，并支持多种语言和格式。
+
+安全和管理：GitLab提供了多种安全和管理功能，如用户和权限管理、LDAP集成、二步验证、防火墙、漏洞扫描等，可以帮助团队更好地保护应用程序和数据的安全。
+
+总之，GitLab是一个功能齐全的代码仓库管理工具，可以帮助团队更高效地协作开发和部署应用程序，提高开发效率和质量。
 
 ## 方法
 ### 裸机安装
@@ -42,20 +60,25 @@ version: '3.6'
 services:
   web:
     image: 'gitlab/gitlab-ce:latest'
+    container_name: gitlab
     restart: always
-    hostname: 'gitlab.example.com'
+    hostname: 'gitlab.kevin2li.top'
     environment:
       GITLAB_OMNIBUS_CONFIG: |
-        external_url 'https://gitlab.example.com'
+        external_url 'https://gitlab.kevin2li.top'
         # Add any other gitlab.rb configuration here, each on its own line
+        gitlab_rails['gitlab_shell_ssh_port'] = 5022
+        nginx['listen_port'] = 80
+        nginx['listen_https'] = false
+      TZ: Asia/Shanghai
     ports:
-      - '6080:80'
-      - '6443:443'
-      - '6022:22'
+      - '5080:80'
+      - '5443:443'
+      - '5022:22'
     volumes:
-      - '$GITLAB_HOME/config:/etc/gitlab'
-      - '$GITLAB_HOME/logs:/var/log/gitlab'
-      - '$GITLAB_HOME/data:/var/opt/gitlab'
+      - '${PWD}/config:/etc/gitlab'
+      - '${PWD}/logs:/var/log/gitlab'
+      - '${PWD}/data:/var/opt/gitlab'
     shm_size: '256m'
 ```
 
@@ -63,10 +86,32 @@ services:
 ``` bash 
 docker compose up -d
 ```
-3. 域名访问配置
-- 域名可解析
 
-- 内网穿透
+可能需要等待一会才能正常运行,可以进入容器查看状态:
+``` bash 
+docker exec -it gitlab bash
+# 查看状态
+gitlab-ctl status
+
+# 重启各项服务
+gitlab-ctl reconfigure
+```
+
+当出现下面结果时,说明已经正常运行
+
+![](https://minio.kevin2li.top/image-bed/blog/20230523142631.png)
+
+
+3. 域名访问配置
+- 域名可解析  
+添加一条A记录,域名为`gitlab.kevin2li.top`,指向公网服务器ip.
+
+- 内网穿透  
+将服务器的`5022`端口映射到本地服务器的`5022`端口,并开放服务器的`5022`端口以供外部访问.
+``` bash 
+sudo systemctl --permanent --zone=public --add-port 5022/tcp
+sudo systemctl --reload
+```
 
 - 反向代理
 
@@ -120,8 +165,14 @@ sudo docker exec -it gitlab grep 'Password:' /etc/gitlab/initial_root_password
 ![](https://minio.kevin2li.top/image-bed/blog/20230522224543.png)
 
 可以在root登录后,设置界面取消勾选管理员同意注册选项.
+
 ![](https://minio.kevin2li.top/image-bed/blog/20230522224819.png)
 
 或者同意新注册的用户:
 
 ![](https://minio.kevin2li.top/image-bed/blog/20230523102457.png)
+
+之后就可以愉快的使用了.
+
+# 参考
+1. [Configure SSL for the GitLab Linux package ](https://docs.gitlab.com/omnibus/settings/ssl/#change-the-default-ssl-certificate-location)
