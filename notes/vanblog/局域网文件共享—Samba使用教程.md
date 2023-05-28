@@ -215,7 +215,7 @@ sudo pdbedit -w -L
 
 - Windows
 
-路径：`\\ip-address\sambashare`  
+路径：`\\{server-ip}\{dir}`  
 
 可以`Win+R`输入，或者在文件资源管理器地址栏输入。
 
@@ -226,4 +226,25 @@ sudo pdbedit -w -L
 ![](https://minio.kevin2li.top/image-bed/blog/20230521210106.png)
 
 - Linux  
-路径：`smb://ip-address/sambashare`
+
+路径：`smb://{server-ip}/{dir}`
+
+打开文件管理器:
+
+![](https://minio.kevin2li.top/image-bed/blog/20230528112248.png)
+
+![](https://minio.kevin2li.top/image-bed/blog/20230528112357.png)
+
+挂载成功
+
+![](https://minio.kevin2li.top/image-bed/blog/20230528112613.png)
+
+- Mac  
+
+路径：`smb://{server-ip}/{dir}`
+
+![](https://minio.kevin2li.top/image-bed/blog/20230528091742.png)
+
+![](https://minio.kevin2li.top/image-bed/blog/20230528092723.png)
+
+![](https://minio.kevin2li.top/image-bed/blog/20230528092910.png)

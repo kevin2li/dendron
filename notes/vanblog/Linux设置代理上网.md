@@ -110,10 +110,8 @@ export https_proxy="socks5://dante_user:123456@127.0.0.1:1080"
 
 ```sh
 Acquire::http::proxy "http://User:Password@host:port/";
-
-Acquire::ftp::proxy "ftp://User:Password@host:port/";
-
 Acquire::https::proxy "https://User:Password@host:port/";
+Acquire::ftp::proxy "ftp://User:Password@host:port/";
 ```
 
 ### docker设置使用代理

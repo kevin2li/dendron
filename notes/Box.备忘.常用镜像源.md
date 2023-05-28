@@ -2,7 +2,7 @@
 id: 10egb6fgplgoxmuboxfaz6d
 title: 常用镜像源或代理
 desc: ''
-updated: 1684821478574
+updated: 1685263578774
 created: 1682589480746
 ---
 ## Ubuntu
@@ -12,8 +12,9 @@ created: 1682589480746
 清华源镜像：https://mirror.tuna.tsinghua.edu.cn/help/ubuntu/
 
 方法：
-- 修改配置文件\
-配置文件路径：`/etc/apt/sources.list`
+- 修改配置文件  
+
+配置文件路径：`/etc/apt/sources.list`  
 
 ``` bash 
 # 备份
@@ -73,8 +74,9 @@ deb https://security.debian.org/debian-security bullseye-security main contrib n
 
 ## pip
 
-阿里云：https://developer.aliyun.com/mirror/pypi?spm=a2c6h.13651102.0.0.59f71b112m674E\
-清华源： https://mirror.tuna.tsinghua.edu.cn/help/pypi/
+阿里云：https://developer.aliyun.com/mirror/pypi?spm=a2c6h.13651102.0.0.59f71b112m674E  
+清华源： https://mirror.tuna.tsinghua.edu.cn/help/pypi/  
+
 - 终端临时使用
 
 ``` bash 

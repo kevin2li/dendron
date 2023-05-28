@@ -1,16 +1,27 @@
-# Proxmox VE安装
-1. 下载镜像
+---
+id: zrlwlu5ssy73xsh2x8ub1la
+title: Proxmox VE安装ikuai软路由、群晖、win10
+desc: ''
+updated: 1685011881005
+created: 1684996559958
+---
+
+## Proxmox VE安装
+1. 下载镜像  
 传送门：https://www.proxmox.com/en/downloads/category/iso-images-pve
-3. 制作启动盘
+
+3. 制作启动盘  
 建议使用ventoy，将下载好的镜像拖进U盘即可。
-5. BIOS设置开机启动项顺序
+5. BIOS设置开机启动项顺序  
 将usb启动设为第一启动项
-7. 重启安装
+7. 重启安装  
 根据提示安装即可。
 
-<!-- more -->
+安装成功后，重启，终端界面会显示web控制台地址，浏览器打开：  
 
-# Proxmox VE 联网
+![](https://minio.kevin2li.top/image-bed/blog/20230525150225.png)
+
+## Proxmox VE 联网
 由于我的笔记本没有网线可用，只能使用wifi。而刚安装好的pve又是缺少无线网络连接相关包(如nmcli等)的，导致无法使用nmcli连接wifi。后来想到可以用手机usb共享网络给笔记本使用，问题才解决。下面是具体过程：
 1. 手机通过数据线链上pve，并开启"usb共享网络"
 2. 查看网络接口并获取ip
@@ -58,7 +69,7 @@ nmcli dev wifi connect <SSID> password <password> ifname wlp2s0
 nmcli dev disconnect wlp2s0
 ```
 
-:::tip{title="nmcli查看设备出现unmanaged状态？"}
+::: tip nmcli查看设备出现unmanaged状态?
 参考：https://askubuntu.com/questions/71159/network-manager-says-device-not-managed
 1. 方法一： 清空/etc/network/interfaces后，并加入下面两行后，重启
 ```bash
@@ -66,7 +77,7 @@ nmcli dev disconnect wlp2s0
 auto lo
 iface lo inet loopback
 ```
-2. 方法二：
+1. 方法二：
 ```bash
 vim /etc/NetworkManager/NetworkManager.conf
 ```
@@ -80,26 +91,71 @@ managed=true # => 将false改为true
 重启服务：`systemctl restart NetworkManager`
 :::
 
-# 虚拟机创建
-## ikuai软路由安装
+## 虚拟机创建
+
+### Ubuntu(server)安装
+1. 上传镜像文件  
+
+![](https://minio.kevin2li.top/image-bed/blog/20230525150632.png)
+
+2. 创建虚拟机
+
+![](https://minio.kevin2li.top/image-bed/blog/20230525151714.png)
+
+![](https://minio.kevin2li.top/image-bed/blog/20230525151837.png)
+
+![](https://minio.kevin2li.top/image-bed/blog/20230525152002.png)
+
+![](https://minio.kevin2li.top/image-bed/blog/20230525152046.png)
+
+![](https://minio.kevin2li.top/image-bed/blog/20230525152132.png)
+
+![](https://minio.kevin2li.top/image-bed/blog/20230525152207.png)
+
+![](https://minio.kevin2li.top/image-bed/blog/20230525152317.png)
+
+![](https://minio.kevin2li.top/image-bed/blog/20230525152342.png)
+
+可以在pve节点下找到新创建的虚拟机
+
+![](https://minio.kevin2li.top/image-bed/blog/20230525152417.png)
+
+点击“启动”，可以进入启动盘安装过程，根据提示安装即可。
+
+![](https://minio.kevin2li.top/image-bed/blog/20230525160151.png)
+
+安装过程中勾选openssh-server，方便后续登录虚拟机
+
+![](https://minio.kevin2li.top/image-bed/blog/20230525161418.png)
+
+安装完成后，重启，即可进入虚拟机终端。
+
+![](https://minio.kevin2li.top/image-bed/blog/20230525155135.png)
+
+### Openwrt安装
+参考：
+1. https://optimus-xs.github.io/posts/install-openwrt-in-pve/
+2. https://www.10bests.com/install-openwrt-lede-on-pve/
+
+### ikuai软路由安装
 1. 开启dhcp
 3. 更改访问ip
 4. 外部访问
 ```bash
 firewall-cmd --add-forward-port=port=80:proto=tcp:toaddr=10.1.2.1:toport=80
 ```
-## win10安装
+### win10安装
 1. iso镜像制作
 2. 上传至pve
 3. 创建虚拟机
 
-## 群晖NAS安装
+### 群晖NAS安装
 群晖安装分为引导文件(多为img格式)和固件系统(多为pat格式)两部分，不像其他系统一个iso文件就够了。
 注意：
 1. 其中引导文件可支持引导的固件系统是有限制的，不是所有的固件系统都能被引导，因此要和固件系统相匹配。
 2. 引导文件可在[黑群晖各版本引导](https://itho.cn/?post=148)下载，固件系统可在群晖官方网站下载：[https://archive.synology.com/download/Os/DSM](https://archive.synology.com/download/Os/DSM)
 
-# 问题记录
+# FAQ
 1. 虚拟机上访问不了外网？  
 >参考：
 >1. https://pve.proxmox.com/wiki/Network_Configuration#sysadmin_network_masquerading

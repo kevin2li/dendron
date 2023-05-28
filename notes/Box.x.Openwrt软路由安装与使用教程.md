@@ -2,7 +2,7 @@
 id: y27ozphocjmnk2yujkwkf10
 title: Openwrt软路由安装与使用教程
 desc: ''
-updated: 1684649515849
+updated: 1685013281786
 created: 1684560392862
 ---
 ## 简介
@@ -131,24 +131,29 @@ luci-app-openclash_0.33.7-beta_all.ipk
 #执行安装命令
 opkg install /tmp/luci-app-openclash_0.33.7-beta_all.ipk
 ```
-安装完成后刷新LUCI页面，在菜单栏 -> 服务 -> OpenClash 进入插件页面
+安装完成后刷新LUCI页面（不行就重启），在菜单栏 -> 服务 -> OpenClash 进入插件页面
 
 3）配置节点订阅  
 网络订阅：  
+
 ![](https://minio.kevin2li.top/image-bed/blog/20230521121824.png)
 
 或者上传配置文件：  
+
 ![](https://minio.kevin2li.top/image-bed/blog/20230521121920.png)
 
 成功截图：
 
 ![](https://minio.kevin2li.top/image-bed/blog/20230521121712.png)
 
-- PassWall
+- PassWall  
+
 在节点订阅处，点击“添加”，填写名称和订阅网址。
+
 ![](https://minio.kevin2li.top/image-bed/blog/20230521123053.png)
 
 在“基本设置”中，打开"主开关"，选择tcp和udp使用的节点，然后“保存并应用”即可。应用成功后，可点击上方的网站进行测试。
+
 ![](https://minio.kevin2li.top/image-bed/blog/20230521123303.png)
 
 ## 参考

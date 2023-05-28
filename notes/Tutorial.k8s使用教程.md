@@ -2,13 +2,9 @@
 id: f44fs6lybpwzuc3oyhhzxkx
 title: k8s使用教程
 desc: ''
-updated: 1682775101729
+updated: 1685009562320
 created: 1682763358880
 ---
-
-
-
-
 ## 简介
 
 Kubernetes（通常简称为"k8s"）是一个开源的容器编排和管理平台，由Google公司开发并捐赠给Cloud Native Computing Foundation（CNCF）管理。
@@ -25,7 +21,7 @@ Kubernetes采用了微服务架构的思想，通过将应用程序拆分成多�
 
 > 参考: https://devopscube.com/kubernetes-architecture-explained/
 
-![](https://minio.kevin2li.top/image-bed/202304291822110.png)
+![](https://minio.kevin2li.top/image-bed/blog/20230525165737.png)
 
 #### Control Plane Components 
 * `kube-apiserver`
@@ -46,7 +42,7 @@ API Server为Kubernetes系统提供了一种强大的方式来控制、管理和
 
 * `kube-controller-manager`
 
-![](https://minio.kevin2li.top/image-bed/202304291911696.png)
+![](https://minio.kevin2li.top/image-bed/blog/20230525174332.png)
 
 在Kubernetes中，`Controller Manager`是一个核心组件，它负责管理集群中的控制器（Controller）。控制器是一类负责维护Kubernetes系统中期望状态和实际状态一致的核心组件，例如Replication Controller、Deployment、StatefulSet、DaemonSet等等。
 
@@ -67,7 +63,7 @@ API Server为Kubernetes系统提供了一种强大的方式来控制、管理和
 
 * `kubelet` 
 
-![](https://minio.kevin2li.top/image-bed/202304291912171.png)
+![](https://minio.kevin2li.top/image-bed/blog/20230525165837.png)
 
 在Kubernetes中，`kubelet`是一个核心组件，它运行在每个节点上，负责管理节点上的容器和镜像。
 
@@ -145,6 +141,13 @@ kubectl exec -it <pod-name> bash
 
 # 删除pod
 kubectl delete pod <pod-name>
+
+#查看名称为nginx-XXXXXX的Pod的信息
+kubectl describe pod nginx-XXXXXX	
+
+#查看名称为nginx的Deployment的信息
+kubectl describe deployment nginx	
+
 ```
 ### 举例
 
@@ -185,5 +188,6 @@ kubectl get pods
 ## 参考
 
 1. https://devopscube.com/kubernetes-tutorials-beginners/
-2. https://www.okteto.com/blog/kubernetes-basics/
-3. https://kuboard.cn/
+2. https://devopscube.com/kubernetes-architecture-explained/
+3. https://www.okteto.com/blog/kubernetes-basics/
+4. https://kuboard.cn/
