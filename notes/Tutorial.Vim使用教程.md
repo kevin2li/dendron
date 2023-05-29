@@ -2,7 +2,7 @@
 id: unvhobazy97207p5sknvdz9
 title: Vim使用教程
 desc: ''
-updated: 1684735103997
+updated: 1685339415037
 created: 1682939832694
 ---
 
@@ -624,8 +624,8 @@ nmap <Leader>w <Plug>(easymotion-overwin-w)
 同样可以安装vim插件
 
 ### Cheatsheet
-![](https://minio.kevin2li.top/image-bed/202305012053709.png)
 
+![](https://minio.kevin2li.top/image-bed/blog/20230529135004.png)
 ## 参考
 1. https://vim.rtorr.com/
 2. https://www.lesswrong.com/posts/ioGf4LHid42mCK3SK/vim
