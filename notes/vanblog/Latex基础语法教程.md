@@ -106,6 +106,21 @@ $$
 x^2, x_1, \sqrt{x}, \sqrt[3]{x}, \frac{1}{\sqrt{a+b}}
 $$
 
+
+**补充**：下标标注在字母正下方
+
+``` latex
+% 格式：
+expr1\limits_{expr2}^{expr3}
+```
+举例：
+- `$ \sum_{i=0}^5x_i $`: $ \sum_{i=0}^5x_i $
+- `$ \sum\limits_{i=0}^5x_i $`: $ \sum\limits_{i=0}^5x_i $
+
+如果`expr1`不是数学符号(会报错)，可以通过`\mathop`转换为数学符号
+- `$max=\limits_{i\in U}x_i$`: $max\limits_{i\in U}x_i$
+- `$\mathop{max}\limits_{i\in U}x_i$`: $\mathop{max}\limits_{i\in U}x_i$
+
 ### 大算子
 
 ![image.png](https://minio.kevin2li.top/image-bed/vanblog/img/ffdef23305ff06e6026c5d7fa810ea6b.image.png)
@@ -181,7 +196,7 @@ $$
 \right|
 $$
 
-:::info{title="常用符号"}
+:::info 常用符号
 希腊字母：
 
 ![image.png](https://minio.kevin2li.top/image-bed/vanblog/img/58d014e1eb07e8d4bc9b0922d90e1dfb.image.png)
@@ -194,10 +209,18 @@ $$
 
 ![image.png](https://minio.kevin2li.top/image-bed/vanblog/img/b928c3641300ca83d8acde121062dbd5.image.png)
 
+花体：
+``` latex 
+\mathcal{L}
+```
+如：$\mathcal{L}$
+
 > 参考  
 > 1. [Cheatsheet for LaTeX Math Commands](https://tilburgsciencehub.com/building-blocks/collaborate-and-share-your-work/write-your-paper/amsmath-latex-cheatsheet/)
 > 2. [LATEX Math for Undergrads](http://tug.ctan.org/info/undergradmath/undergradmath.pdf)
 :::
+
+
 ## 列表
 ### 无序列表
 示例：

@@ -2,7 +2,7 @@
 id: unvhobazy97207p5sknvdz9
 title: Vim使用教程
 desc: ''
-updated: 1685339415037
+updated: 1685340324577
 created: 1682939832694
 ---
 
@@ -551,6 +551,7 @@ call plug#begin()
 Plug 'https://github.com/tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
 Plug 'easymotion/vim-easymotion'
+Plug 'tpope/vim-commentary' 
 
 call plug#end()
 
