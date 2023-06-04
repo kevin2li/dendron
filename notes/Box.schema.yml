@@ -1,0 +1,12 @@
+version: 1
+imports: []
+schemas:
+  - id: Box
+    title: 收集箱
+    desc: 知识临时存储站(公开)
+    parent: root
+    children: 
+      - pattern: x
+        title: 待归纳
+      - pattern: snippets
+      - pattern: memo

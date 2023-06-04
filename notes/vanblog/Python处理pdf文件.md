@@ -2,7 +2,7 @@
 
 Python中可以处理pdf的库有好几个，如PyMuPDF、PDFrw、PikePDF、PyPDF2等，本文主要介绍如PyMuPDF的用法。该库相比于同类其他库，支持格式丰富，包括PDF、XPS、EPUB、MOBI FB2、CBZ、SVG、Image等多种格式，且各方面(拷贝页面、提取文字等)处理速度具有明显优势。
 
-![image.png](https://minio.kevin2li.top/image-bed/vanblog/img/de14629964ebd5609a672af2adf9de49.image.png)
+![](https://minio.kevin2li.top/image-bed/blog/20230604095112.png)
 
 GitHub: https://github.com/pymupdf/PyMuPDF  
 PyPi: https://pypi.org/project/PyMuPDF/   
@@ -38,9 +38,10 @@ doc.isEncrypted # False
 :::info{title="如何加密PDF"}
 可以使用WPS:
 
-![image.png](https://minio.kevin2li.top/image-bed/vanblog/img/521572d1e04332ea27d2644834d57aa3.image.png)
+![](https://minio.kevin2li.top/image-bed/blog/20230604094848.png)
 
-![image.png](https://minio.kevin2li.top/image-bed/vanblog/img/9faeb55f4d0708f9663ca7a84a8e1cca.image.png)
+![](https://minio.kevin2li.top/image-bed/blog/20230604094908.png)
+
 :::
 - 取消密码
 
@@ -63,10 +64,8 @@ doc.page_count # 418
 ```python
 doc.metadata
 ```
-![image.png](https://minio.kevin2li.top/image-bed/vanblog/img/92b4e47063f4fa9871c47c143e1f5560.image.png)
 
 - 查看目录
-
 
 ```python
 doc.get_toc() # []
@@ -171,7 +170,8 @@ doc.save("out.pdf")
 
 页码文件格式如下：
 
-![image.png](https://minio.kevin2li.top/image-bed/vanblog/img/10a971312aeb6dd55681414f8826429d.image.png)
+
+![](https://minio.kevin2li.top/image-bed/blog/20230604094627.png)
 
 ```python
 import fitz

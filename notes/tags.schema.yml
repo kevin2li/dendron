@@ -1,0 +1,8 @@
+version: 1
+imports: []
+schemas:
+  - id: tags
+    title: 标签
+    desc: 标签
+    parent: root
+    children: []

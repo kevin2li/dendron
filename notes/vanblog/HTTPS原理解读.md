@@ -122,14 +122,17 @@ TLS协议位于协议栈中的会话层。
 
 > 参考：https://www.oreilly.com/library/view/high-performance-browser/9781449344757/ch04.html
 
-![image.png](https://minio.kevin2li.top/image-bed/vanblog/img/28e6b4d2a58c6258c35e110f444771ed.image.png)
+![](https://minio.kevin2li.top/image-bed/blog/20230601180024.png)
 
 
 TLS Handshake过程：
-![image.png](https://minio.kevin2li.top/image-bed/vanblog/img/438d69bd35e1399c4e9e11d02947ed6c.image.png)
+
+![](https://minio.kevin2li.top/image-bed/blog/20230601175955.png)
+
 
 TLS Record格式：
-![image.png](https://minio.kevin2li.top/image-bed/vanblog/img/f7cec9e4ff41d4bfbf383a37c804dfb1.image.png)
+
+![](https://minio.kevin2li.top/image-bed/blog/20230601180055.png)
 
 ## 实战分析
 思路：先在Linux机器上通过`curl`命令发起网络请求，并用`tcpdump`捕获期间产生的网络包，然后导入到wireshark中进行分析。

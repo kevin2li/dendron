@@ -1,0 +1,10 @@
+version: 1
+imports: []
+schemas:
+  - id: ComputerComposition
+    title: 组成原理
+    desc: 计算机组成原理相关知识
+    parent: root
+    children: 
+      - pattern: "x"
+        title: "待归纳"

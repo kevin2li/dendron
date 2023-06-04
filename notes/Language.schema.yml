@@ -8,6 +8,7 @@ schemas:
       - Python
       - Javascript
     title: 编程语言
+    desc: 编程语言相关知识
     parent: root
 
   - id: C++

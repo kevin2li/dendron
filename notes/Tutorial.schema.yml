@@ -3,6 +3,7 @@ imports: []
 schemas:
   - id: Tutorial
     title: Tutorial
+    desc: 教程类知识
     parent: root
     children: 
       - pattern: "内网穿透"

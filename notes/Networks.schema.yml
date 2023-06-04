@@ -3,6 +3,7 @@ imports: []
 schemas:
   - id: Network
     title: networks
+    desc: 计算机网络相关知识
     parent: root
     children: 
       - pattern: "物理层"
