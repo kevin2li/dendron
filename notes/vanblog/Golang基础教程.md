@@ -1,11 +1,22 @@
-# 简介
+## golang基础教程
 
 参考：  
 https://gobyexample.com/
 <!-- more -->
 
-# 语法
-## Hello World
+## 安装
+
+https://go.dev/doc/install
+
+
+代理设置：
+
+``` bash 
+go env -w GO111MODULE=on
+go env -w GOPROXY=https://goproxy.cn,direct
+```
+## 语法
+### Hello World
 
 ```go
 package main
@@ -16,8 +27,8 @@ func main() {
     fmt.Println("hello world")
 }
 ```
-## 变量
-### 变量声明
+### 变量
+#### 变量声明
 
 ```go
 package main
@@ -42,7 +53,7 @@ func main() {
     fmt.Println(f)
 }
 ```
-### 常量声明
+#### 常量声明
 
 ```go
 package main
@@ -67,8 +78,8 @@ func main() {
     fmt.Println(math.Sin(n))
 }
 ```
-### 数据类型
-## 字符串
+#### 数据类型
+### 字符串
 
 ```go
 package main
@@ -96,13 +107,13 @@ func main() {
 
     // 遍历字符串
     for idx, runeValue := range s {
-        fmt.Printf("%#U starts at %d\n", runeValue, idx)
+        fmt.Printf("%##U starts at %d\n", runeValue, idx)
     }
 }
 
 ```
 
-### 格式化输出
+#### 格式化输出
 
 ```go
 package main
@@ -123,7 +134,7 @@ func main() {
 
     fmt.Printf("struct2: %+v\n", p)
 
-    fmt.Printf("struct3: %#v\n", p)
+    fmt.Printf("struct3: %##v\n", p)
 
     fmt.Printf("type: %T\n", p)
 
@@ -194,7 +205,7 @@ sprintf: a string
 io: an error
 ```
 
-## 数组
+### 数组
 
 ```go
 package main
@@ -224,7 +235,7 @@ func main() {
     fmt.Println("2d: ", twoD)
 }
 ```
-## 切片
+### 切片
 
 ```go
 package main
@@ -282,7 +293,7 @@ func main() {
 }
 ```
 
-## 字典
+### 字典
 
 ```go
 package main
@@ -316,7 +327,7 @@ func main() {
     fmt.Println("map:", n)
 }
 ```
-## 结构体
+### 结构体
 
 
 ```go
@@ -358,9 +369,9 @@ func main() {
     fmt.Println(sp.age)
 }
 ```
-## 控制流
-### 条件
-#### `if`
+### 控制流
+#### 条件
+##### `if`
 ```go
 package main
 
@@ -388,7 +399,7 @@ func main() {
 }
 ```
 
-#### `switch`
+##### `switch`
 ```go
 package main
 
@@ -440,8 +451,8 @@ func main() {
     whatAmI("hey")
 }
 ```
-### 循环
-#### `for`
+#### 循环
+##### `for`
 ```go
 package main
 import "fmt"
@@ -488,8 +499,8 @@ func main() {
     
 }
 ```
-## 函数
-### 普通函数
+### 函数
+#### 普通函数
 
 ```go
 package main
@@ -514,7 +525,7 @@ func main() {
     fmt.Println("1+2+3 =", res)
 }
 ```
-### 多返回值
+#### 多返回值
 
 ```go
 package main
@@ -535,7 +546,7 @@ func main() {
     fmt.Println(c)
 }
 ```
-### 变长参数列表
+#### 变长参数列表
 ```go
 package main
 
@@ -560,7 +571,7 @@ func main() {
     sum(nums...)
 }
 ```
-## 指针
+### 指针
 
 ```go
 package main
@@ -596,8 +607,8 @@ zeroval: 1
 zeroptr: 0
 pointer: 0x42131100
 ```
-## 面向对象
-### 方法
+### 面向对象
+#### 方法
 
 ```go
 package main
@@ -627,7 +638,7 @@ func main() {
     fmt.Println("perim:", rp.perim())
 }
 ```
-### 接口
+#### 接口
 
 ```go
 package main
@@ -677,10 +688,10 @@ func main() {
     measure(c)
 }
 ```
-## 并发
+### 并发
 
-## 标准库函数
-### 文件路径
+### 标准库函数
+#### 文件路径
 
 ```go
 package main
@@ -725,7 +736,7 @@ func main() {
     fmt.Println(rel)
 }
 ```
-### 文件读取
+#### 文件读取
 
 ```go
 package main
@@ -783,7 +794,7 @@ func main() {
     f.Close()
 }
 ```
-### 文件写入
+#### 文件写入
 
 ```go
 package main
@@ -831,7 +842,7 @@ func main() {
 
 }
 ```
-### 排序
+#### 排序
 
 ```go
 package main
@@ -855,7 +866,7 @@ func main() {
     fmt.Println("Sorted: ", s)
 }
 ```
-### 时间格式化
+#### 时间格式化
 
 ```go
 package main
@@ -893,7 +904,7 @@ func main() {
 }
 ```
 
-### json处理
+#### json处理
 
 ```go
 package main
@@ -975,4 +986,4 @@ func main() {
     enc.Encode(d)
 }
 ```
-# 参考
+## 参考

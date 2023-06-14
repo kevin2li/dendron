@@ -35,7 +35,7 @@ doc.authenticate("password")
 doc.isEncrypted # False
 ```
 
-:::info{title="如何加密PDF"}
+:::info 如何加密PDF
 可以使用WPS:
 
 ![](https://minio.kevin2li.top/image-bed/blog/20230604094848.png)

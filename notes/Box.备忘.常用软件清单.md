@@ -2,7 +2,7 @@
 id: 6elwcc01f42s92n9n8k3yci
 title: 常用软件清单
 desc: ''
-updated: 1685446852590
+updated: 1686050645659
 created: 1684821611504
 ---
 ## 编程类
@@ -184,6 +184,7 @@ FFmpeg是一个功能非常全面的音视频处理工具。它不仅能进行�
 
 PowerToys是一款由微软官方开发的免费Windows实用工具集，可以帮助用户增强Windows操作系统的功能和性能。PowerToys提供了多种实用工具，例如FancyZones窗口管理器、PowerRename文件重命名工具、Color Picker颜色选择器等等。其中，FancyZones窗口管理器可以帮助用户快速地将窗口分割成多个区域，从而提高窗口管理效率；PowerRename文件重命名工具可以让用户轻松地批量重命名文件，提高文件管理效率；Color Picker颜色选择器可以让用户轻松地选择屏幕上的颜色，提高设计和开发效率。此外，PowerToys还提供了其他有用的功能，例如键盘管理、文件预览、快速启动等等，可以帮助用户更方便地使用Windows操作系统。由于其易用性、功能丰富和免费性，PowerToys已成为许多Windows用户增强操作系统功能的首选工具之一。
 
+
 - [pandoc](https://pandoc.org/)
 
 ![](https://minio.kevin2li.top/image-bed/blog/20230530192406.png)
@@ -246,3 +247,9 @@ AList是一款简单而强大的任务管理和待办事项清单应用程序，
 ## 科研
 - [Zotero](https://www.zotero.org/download/)
 - [Mathtype](https://www.wiris.com/en/mathtype/)
+
+## 求职
+- [Reactive Resume](https://github.com/AmruthPillai/Reactive-Resume)
+
+简历生成器
+

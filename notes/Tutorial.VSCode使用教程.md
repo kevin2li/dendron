@@ -2,7 +2,7 @@
 id: 7twx9ycf6a3z5nkpj9k3wt7
 title: VSCode使用教程
 desc: ''
-updated: 1683372524153
+updated: 1686555155664
 created: 1682510699184
 ---
 
@@ -383,6 +383,18 @@ vscode有很多设置项、很多扩展,以及很多UI设置项,此功能允许�
 支持的操作:  
 
 ![](https://minio.kevin2li.top/image-bed/20230428162041.png)
+
+### 中文分词
+
+vscode默认双击会选中当前光标下单词，但是在中文环境下会选择整行，这是因为vscode默认只配置了英文的单词分隔符，需要在设置的`editor.wordSeparators`属性值，内容如下：
+
+``` bash 
+`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?·！￥……（）——【】、；：‘’“”，。、？'
+```
+
+修改后的分隔符：
+
+![](https://minio.kevin2li.top/image-bed/blog/20230612153019.png)
 
 ## 插件推荐
 | 插件                                                                                                                | 功能                                                                 |
