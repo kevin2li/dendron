@@ -2,7 +2,7 @@
 id: ckomqwi87e38a8ff0gk1acr
 title: Vue3使用经验总结
 desc: ''
-updated: 1685156394468
+updated: 1691629744607
 created: 1685108556902
 ---
 
@@ -59,7 +59,7 @@ app.mount("#app");
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { ref, defineComponent } from "vue";
 export default defineComponent({
   components: {},
@@ -543,7 +543,9 @@ export const demoStore = defineStore("demo", {
         age: 25,
     }),
     getters: {
-
+        isOwner(): boolean {
+            return this.username === "kevin"
+        },
     },
     actions: {
         resetState(){

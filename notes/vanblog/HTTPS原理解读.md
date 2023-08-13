@@ -134,6 +134,20 @@ TLS Record格式：
 
 ![](https://minio.kevin2li.top/image-bed/blog/20230601180055.png)
 
+## HTTPS测试服务器代码
+```python
+import http.server, ssl, socketserver
+
+context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
+context.load_cert_chain("cert.pem", keyfile="key.pem") # PUT YOUR cert.pem HERE
+server_address = ("192.168.1.102", 4443) # CHANGE THIS IP & PORT
+handler = http.server.SimpleHTTPRequestHandler
+
+with socketserver.TCPServer(server_address, handler) as httpd:
+    httpd.socket = context.wrap_socket(httpd.socket, server_side=True)
+    httpd.serve_forever()
+```
+
 ## 实战分析
 思路：先在Linux机器上通过`curl`命令发起网络请求，并用`tcpdump`捕获期间产生的网络包，然后导入到wireshark中进行分析。
 > 参考：https://everything.curl.dev/usingcurl/tls/sslkeylogfile

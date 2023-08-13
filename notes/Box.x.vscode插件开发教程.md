@@ -2,7 +2,7 @@
 id: x3vly0r66r1l0wfts7rbdmh
 title: vscode插件开发教程
 desc: ''
-updated: 1686449881616
+updated: 1686894830059
 created: 1686357655503
 ---
 
@@ -87,5 +87,38 @@ const position = editor.selection.active;
 const column = position.character;  //获取当前列号
 const lineText = document.lineAt(lineNumber).text; // 获取当前行的文本 
 ```
+
+### 打包
+
+``` json 
+  "scripts": {
+    "compile": "node ./esbuild.js",
+    "package": "NODE_ENV=production node ./esbuild.js",
+    "watch": "node ./esbuild.js --watch",
+    "lint": "eslint src --ext ts",
+    "vscode:prepublish": "npm run esbuild-base -- --minify",
+    "esbuild-base": "esbuild ./src/extension.ts --bundle --outfile=out/main.js --external:vscode --format=cjs --platform=node",
+    "vsce-package": "pnpm vsce package --no-dependencies",
+    "vsce-publish": "pnpm vsce publish --no-dependencies"
+  },
+```
+
+``` bash 
+npm install -g vsce
+```
+
+### 查看已安装插件运行日志
+
+1. 控制台日志  
+
+`Ctrl+Shift+P`: `Developer: Toggle Developer Tools`
+
+![](https://minio.kevin2li.top/image-bed/blog/20230616135132.png)
+
+
+2. 文件日志
+
+`Ctrl+Shift+P`: `Developer: Open Extension Logs Folder`
+
 
 ## 参考
